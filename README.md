@@ -194,16 +194,6 @@ $ open mobile.xcodeproj
 
 Once the project loads in Xcode, select an iPhone simulator from the menu bar and the "Run" arrow button to start the app.
 
-**Enable Location Simulation in Xcode**
-
-To view the app's functionality in the iOS Simulator you will want to simulate a trip.
-
-First, ensure location simulation is enabled in Xcode.  From the Xcode menu select *Product -> Scheme -> Edit Scheme*
-
-Then ensure *Core Location: Allow Location Simulation* is checked.
-
-![Image description](images/xcode-simulate-location.jpg)
-
 Once the iPhone app is running in the iOS Simulator, initiate a "Freeway Drive" to simulate the user driving:
 
 ![Image description](images/carplay-freeway.jpg)
@@ -215,6 +205,14 @@ As the user's location changes:
 - Select the Places button to view coffee, food, and fuel locations in the vicinity of the user.
 
 - Select the Messages button to view messages sent to the user from the AWS Cloud.  Instructions for sending messages are detailed below.
+
+If the simulator does not display the feature to simulate a Freeway Drive, ensure Location Simulation is enabled in Xcode:
+
+From the Xcode menu select *Product -> Scheme -> Edit Scheme*
+
+Then ensure *Core Location: Allow Location Simulation* is checked.
+
+![Image description](images/xcode-simulate-location.jpg)
 
 **Start the CarPlay simulator**
 
