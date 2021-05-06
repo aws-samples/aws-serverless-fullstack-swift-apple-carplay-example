@@ -1,0 +1,45 @@
+# AppSync GraphQL schema
+
+type VehicleMessage @model (subscriptions: null) @auth (
+    rules: [
+        { allow: public, provider: apiKey }
+    ]
+)  
+{
+  id: ID!
+  owner: String!
+  timestamp: AWSDateTime!
+  message: String!
+}
+
+type Weather {
+  aqIndex: Float!
+  temperature: Float!
+  latitude: Float!
+  longitude: Float!
+}
+
+enum PlaceType {
+  city
+  coffee
+  fuel
+  food
+}
+
+type Place {
+  placeType: PlaceType!
+  name: String!
+  address: String!
+  latitude: Float!
+  longitude: Float!
+}
+
+# map queries to Swift Lambda functions
+type Query {
+  getWeather(latitude: Float!, longitude: Float!): Weather @function(name: "swift-carplay-location-get-weather")
+  getPlaces(placeType: PlaceType!, latitude: Float!, longitude: Float!, maxResults: Int!): [Place] @function(name: "swift-carplay-location-get-places")
+}
+
+type Subscription {
+  onCreateVehicleMessage(owner: String!): VehicleMessage @aws_subscribe(mutations: ["createVehicleMessage"])
+}
