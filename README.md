@@ -60,7 +60,7 @@ $ git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carp
 **Switch to the project's CDK folder**
 
 ```
-$ cd aws-swift-carplay-location/cdk
+$ cd aws-serverless-fullstack-swift-apple-carplay-example/cdk
 ```
 
 **Install the CDK app's Node.js packages**
