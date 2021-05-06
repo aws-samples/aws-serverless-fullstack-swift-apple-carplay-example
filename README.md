@@ -20,7 +20,7 @@ The application tracks the user's current location and displays the current weat
 3. The AWS AppSync GraphQL API uses Lambda functions written in Swift to interact with Amazon Location Service for points of interest.  It also communicates with a 3rd party API outside of AWS for weather and air quality. The API key for the 3rd party weather service is stored in AWS Secrets Manager.
 4. The client establishes a subscription to AWS AppSync to receive real-time notifications triggered from the cloud.  These messages are also stored in an Amazon DynamoDB table.
 
-At the time of creating this sample AWS does not have an official Swift SDK.  For this project we used the [SOTO SDK](https://soto.codes/) in the Lambda functions to interact with AWS Services. SOTO is an open source Swift SDK for AWS developed by [Adam Fowler](https://github.com/adam-fowler).  Thank you Adam!
+At the time of creating this sample AWS does not have an official Swift SDK.  For this project we used the open source [SOTO SDK](https://soto.codes/) in the Lambda functions to interact with AWS Services.
 
 ## Getting Started
 
@@ -54,7 +54,7 @@ The application utilizes the AWS Cloud Development Kit (CDK) and Docker to compi
 **Clone this code repository**
 
 ```
-$ git clone git@ssh.gitlab.aws.dev:davmoser/aws-swift-carplay-location.git
+$ git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carplay-example.git
 ```
 
 **Switch to the project's CDK folder**
