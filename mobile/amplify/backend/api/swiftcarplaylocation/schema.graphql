@@ -1,10 +1,6 @@
 # AppSync GraphQL schema
 
-type VehicleMessage @model (subscriptions: null) @auth (
-    rules: [
-        { allow: public, provider: apiKey }
-    ]
-)  
+type VehicleMessage @model (subscriptions: null)
 {
   id: ID!
   owner: String!
