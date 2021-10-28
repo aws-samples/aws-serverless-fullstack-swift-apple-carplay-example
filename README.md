@@ -18,9 +18,8 @@ The application tracks the user's current location and displays the current weat
 1. The Apple CarPlay app is written in Swift and uses AWS Amplify libraries to communicate with services in the AWS Cloud.
 2. All data is served to the client application via an AWS AppSync GraphQL API.  As the client changes its location, queries are sent via the API to obtain weather, air quality, and points of interest in the vicinity of the user.
 3. The AWS AppSync GraphQL API uses Lambda functions written in Swift to interact with Amazon Location Service for points of interest.  It also communicates with a 3rd party API outside of AWS for weather and air quality. The API key for the 3rd party weather service is stored in AWS Secrets Manager.
-4. The client establishes a subscription to AWS AppSync to receive real-time notifications triggered from the cloud.  These messages are also stored in an Amazon DynamoDB table.
-
-At the time of creating this sample AWS does not have an official Swift SDK.  For this project we used the open source [SOTO SDK](https://soto.codes/) in the Lambda functions to interact with AWS Services.
+4. The Lambda functions use the new [AWS SDK for Swift](https://github.com/awslabs/aws-sdk-swift) to interact with the AWS services!
+5. The client establishes a subscription to AWS AppSync to receive real-time notifications triggered from the cloud.  These messages are also stored in an Amazon DynamoDB table.
 
 ## Getting Started
 
@@ -31,19 +30,17 @@ The following software was used in the development of this application.  While i
 
 2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (2.1.32) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
 
-3. [Node.js](https://nodejs.org/en/download/current/) (^15.12.0) with NPM (^7.7.4)
+3. [Node.js](https://nodejs.org/en/download/current/) (^16.8.0) with NPM (^7.19.1)
 
-4. [Typescript](https://www.npmjs.com/package/typescript) (^4.2.4) Typescript is required by the Cloud Development Kit (CDK) in the next step.
+4. [Typescript](https://www.npmjs.com/package/typescript) (^4.2.4) Typescript is required by the Cloud Development Kit (CDK).
 
-5. [AWS Cloud Development Kit (CDK)](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install) (1.98.0).  The CDK is used to deploy the Swift based Lambda functions to AWS.
-
-6. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^4.47.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
+6. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^6.3.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
 
 7. [IQ Air](https://www.iqair.com/us/air-pollution-data-api) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
-8. [Docker Desktop](https://www.docker.com/products/docker-desktop) (3.3.0) Docker is used to compile the Swift Lambda functions into a Docker image. 
+8. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.1.1) Docker is used to compile the Swift Lambda functions into a Docker image. 
 
-9. [Xcode](https://developer.apple.com/xcode/) (12.4) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 14.2 enabled.
+9. [Xcode](https://developer.apple.com/xcode/) (13.0) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 14.0 enabled.
 
 ### **Installation**
 
@@ -74,56 +71,29 @@ $ npm install
 If you have not used the CDK in your AWS account you must first bootstrap the CDK.  This will configure your AWS account for interaction with the CDK.
 
 ```
-$ cdk bootstrap
+$ npx cdk bootstrap
 ```
 
 View the resources the CDK will deploy into your account:
 
 ```
-$ cdk diff
+$ npx cdk diff
 ```
 
-Deploy the resources into your account.  This will create 2 Lambda functions and a Secrets Manager secret.  The CDK will use Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
+Deploy the resources into your account.  This will create 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  The CDK will use Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
 
 ```
-$ cdk synth
-$ cdk deploy
-```
-
-When the CDK has completed the deployment, it will output the name of the Secrets Manager secret.  Retain this name for a future step.
-
-```
- ✅  CdkAWSStackSwiftCarplayLocation
-
-Outputs:
-CdkAWSStackSwiftCarplayLocation.aqiAPIKeySecretName = Secretxxx-xxx
-
+$ npx cdk deploy
 ```
 
 **Configure Secrets Manager with the IQ Air API Key**
 
-The CDK created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lambda will use this secret for the key to access the IQ Air API.  The name of the secret was output from the *cdk deploy* command above.  Use the AWS CLI to update the secret with the API key you obtained from the IQ Air site.
+The CDK created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lambda will use this secret for the key to access the IQ Air API.  Use the AWS CLI to update the secret with the API key you obtained from the IQ Air site.
 
 Replace the values in brackets with your values:
 
 ```
-$ aws secretsmanager put-secret-value --secret-id [secret name from CDK output] --secret-string [your IQ Air API key]
-```
-
-If you forgot to record the secret name from the output of the CDK deployment, you can view the name with the following AWS CLI command.  Select the "Name:" value from the output.
-
-```
-$ aws secretsmanager list-secrets
-```
-
-**Create the Amazon Location Place Index**
-
-The application utilizes the Amazon Location Service to identify points of interest (Coffee, Food, and Fuel) in the vicinity of the user.  To use Amazon Location you must create a Place Index with the AWC CLI.
-
-Run this command from the command line:
-
-```
-$ aws location create-place-index --data-source "Esri" --index-name "SwiftCarplayLocation" --pricing-plan "RequestBasedUsage"
+$ aws secretsmanager put-secret-value --secret-id SwiftCarplayAPISecret --secret-string [your IQ Air API key]
 ```
 
 **Initialize the CarPlay app and AWS AppSync API**
@@ -260,12 +230,6 @@ You should see the message delivered to both the CarPlay and iPhone apps.
 ## Cleanup
 
 Once you are finished working with this project, you may want to delete the resources it created in your AWS account.  
-
-Delete the Amazon Location Place index:
-
-```
-$ aws location delete-place-index --index-name SwiftCarplayLocation
-```
 
 From the **mobile** folder delete the resources created by Amplify:
 
