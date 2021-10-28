@@ -82,11 +82,10 @@ extension LocationService: CLLocationManagerDelegate {
         self.longitude = location.coordinate.longitude
         
         // call to the Appsync API to retrieve the user's current City based on their current location
-        DataService().getPlaces(placeType: PlaceType.city, latitude: self.latitude, longitude: self.longitude, maxResults: 1) { result in
+        DataService().getLocation(latitude: self.latitude, longitude: self.longitude) { result in
 
             switch (result) {
-            case .success(let items):
-                guard let city = items.first else { return }
+            case .success(let city):
                 self.city = city.name
                 self.delegate?.locationService(latitude: self.latitude, longitude: self.longitude, city: self.city)
             case .failure(let error):

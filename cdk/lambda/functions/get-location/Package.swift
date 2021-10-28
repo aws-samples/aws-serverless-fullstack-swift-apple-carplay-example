@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let name: String = "get-places"
+let name: String = "get-location"
 
 let package = Package(
     name: name,

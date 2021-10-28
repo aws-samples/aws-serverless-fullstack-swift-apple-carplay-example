@@ -41,5 +41,23 @@ extension GraphQLRequest {
             responseType: [Place].self,
             decodePath: operationName)
     }
+    
+    static func getLocation(latitude: Double, longitude: Double) -> GraphQLRequest<Location> {
+        let operationName = "getLocation"
+        let document = """
+        query \(operationName) {
+          \(operationName)(latitude: \(latitude), longitude: \(longitude)) {
+            name
+            latitude
+            longitude
+          }
+        }
+        """
+        
+        return GraphQLRequest<Location>(
+            document: document,
+            responseType: Location.self,
+            decodePath: operationName)
+    }
 }
 

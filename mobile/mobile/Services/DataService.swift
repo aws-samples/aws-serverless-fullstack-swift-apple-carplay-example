@@ -39,5 +39,23 @@ class DataService {
             }
         }
     }
+    
+    // function to call Appsync API to retrieve current location based on provided latitude and longitude
+    func getLocation(latitude: Double, longitude: Double, completion: @escaping (Result<Location, Error>) -> Void)  {
+        
+        Amplify.API.query(request: .getLocation(latitude: latitude, longitude: longitude)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                    case .success(let item):
+                        completion(.success(item))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 

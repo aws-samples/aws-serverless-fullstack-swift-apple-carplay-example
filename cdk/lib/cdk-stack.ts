@@ -3,6 +3,8 @@ import * as cdk from '@aws-cdk/core';
 import * as Lambda from '@aws-cdk/aws-lambda'
 import * as iam from '@aws-cdk/aws-iam'
 import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
+import * as locationService from '@aws-cdk/aws-location'
+import { CfnPlaceIndex } from "@aws-cdk/aws-location";
 
 export class CdkStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -10,6 +12,13 @@ export class CdkStack extends cdk.Stack {
 
     // create secrets manager secret to hold the air quality api key
     const aqiAPIKeySecret = new secretsmanager.Secret(this, 'Secret');
+
+    // create an Amazon Location Place Index
+    const placeIndex = new CfnPlaceIndex(this, 'locationPlaceIndex', {
+      dataSource: 'Esri',
+      indexName: 'SwiftCarPlayPlaceIndex',
+      pricingPlan: 'RequestBasedUsage'
+    })
 
     // create the docker image based lambda function to get-weather
     // pass in the api secret name and the api endpoint as environment variables
@@ -38,12 +47,7 @@ export class CdkStack extends cdk.Stack {
     });
 
     // create the docker image based lambda function to get-places
-    // pass in the api end point for Amazon Location that will be used by the function
-
     dockerfile = path.join(__dirname, "../lambda/functions/get-places/");
-
-    let locationApiEndpoint = this.node.tryGetContext('locationApiEndpoint')
-    locationApiEndpoint = locationApiEndpoint.replace("{REGION}", this.region)
 
     const lambdaGetPlaces = new Lambda.DockerImageFunction(this, "lambdaGetPlaces", {
       functionName: "swift-carplay-location-get-places",
@@ -54,22 +58,42 @@ export class CdkStack extends cdk.Stack {
       timeout:cdk.Duration.minutes(3),
       memorySize: 512,
       environment: {
-        "API_ENDPOINT": locationApiEndpoint
+        "PLACE_INDEX_NAME": placeIndex.indexName
       }
     });
 
     // grant permission to the get-places function to interact with Amazon Location
-    let locationArn = this.node.tryGetContext('locationArn')
-    locationArn = locationArn.replace("{REGION}", this.region)
-    locationArn = locationArn.replace("{ACCOUNT}", this.account)
-
     lambdaGetPlaces.addToRolePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: [
-        "geo:SearchPlaceIndexForPosition",
         "geo:SearchPlaceIndexForText"
       ],
-      resources: [locationArn]
+      resources: [placeIndex.attrIndexArn]
+    }))
+
+    // create the docker image based lambda function to get-location
+    dockerfile = path.join(__dirname, "../lambda/functions/get-location/");
+
+    const lambdaGetLocation = new Lambda.DockerImageFunction(this, "lambdaGetLocation", {
+      functionName: "swift-carplay-location-get-location",
+      code: Lambda.DockerImageCode.fromImageAsset(dockerfile, {
+        buildArgs:{
+          "TARGET_NAME":"get-location"
+      }}),
+      timeout:cdk.Duration.minutes(3),
+      memorySize: 512,
+      environment: {
+        "PLACE_INDEX_NAME": placeIndex.indexName
+      }
+    });
+
+    // grant permission to the get-location function to interact with Amazon Location Service
+    lambdaGetLocation.addToRolePolicy(new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        "geo:SearchPlaceIndexForPosition"
+      ],
+      resources: [placeIndex.attrIndexArn]
     }))
   }
 }

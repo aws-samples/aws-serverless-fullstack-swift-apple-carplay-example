@@ -8,6 +8,12 @@ type VehicleMessage @model (subscriptions: null)
   message: String!
 }
 
+type Location {
+  name: String!
+  latitude: Float!
+  longitude: Float!
+}
+
 type Weather {
   aqIndex: Float!
   temperature: Float!
@@ -16,7 +22,6 @@ type Weather {
 }
 
 enum PlaceType {
-  city
   coffee
   fuel
   food
@@ -34,6 +39,7 @@ type Place {
 type Query {
   getWeather(latitude: Float!, longitude: Float!): Weather @function(name: "swift-carplay-location-get-weather")
   getPlaces(placeType: PlaceType!, latitude: Float!, longitude: Float!, maxResults: Int!): [Place] @function(name: "swift-carplay-location-get-places")
+  getLocation(latitude: Float!, longitude: Float!): Location @function(name: "swift-carplay-location-get-location")
 }
 
 type Subscription {
