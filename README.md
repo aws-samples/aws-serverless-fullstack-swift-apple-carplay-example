@@ -240,7 +240,7 @@ $ amplify delete
 From the **cdk** folder delete the resources created by the CDK:
 
 ```
-$ cdk destroy
+$ npx cdk destroy
 ```
 
 ## License
