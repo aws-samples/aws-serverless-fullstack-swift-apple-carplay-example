@@ -3,7 +3,6 @@ import * as cdk from '@aws-cdk/core';
 import * as Lambda from '@aws-cdk/aws-lambda'
 import * as iam from '@aws-cdk/aws-iam'
 import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
-import * as locationService from '@aws-cdk/aws-location'
 import { CfnPlaceIndex } from "@aws-cdk/aws-location";
 
 export class CdkStack extends cdk.Stack {
@@ -11,7 +10,9 @@ export class CdkStack extends cdk.Stack {
     super(scope, id, props);
 
     // create secrets manager secret to hold the air quality api key
-    const aqiAPIKeySecret = new secretsmanager.Secret(this, 'Secret');
+    const aqiAPIKeySecret = new secretsmanager.Secret(this, 'Secret', {
+      secretName: 'SwiftCarplayAPISecret'
+    });
 
     // create an Amazon Location Place Index
     const placeIndex = new CfnPlaceIndex(this, 'locationPlaceIndex', {
@@ -40,11 +41,6 @@ export class CdkStack extends cdk.Stack {
 
     // grant the get weather lambda function permission to read the air quality api secret
     aqiAPIKeySecret.grantRead(lambdaGetWeather);
-
-    // output the secret name so it can be identified after the cdk stack deploys
-    new cdk.CfnOutput(this, "aqiAPIKeySecretName", {
-      value: aqiAPIKeySecret.secretName
-    });
 
     // create the docker image based lambda function to get-places
     dockerfile = path.join(__dirname, "../lambda/functions/get-places/");

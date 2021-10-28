@@ -119,14 +119,14 @@ Amplify will then begin to provision your account for the project deployment. On
 
 ```
 $ amplify status
-```
 
-```
-Current Environment: dev
-
-| Category | Resource name        | Operation | Provider plugin   |
-| -------- | -------------------- | --------- | ----------------- |
-| Api      | swiftcarplaylocation | Create    | awscloudformation |
+  Current Environment: dev
+    
+┌──────────┬──────────────────────┬───────────┬───────────────────┐
+│ Category │ Resource name        │ Operation │ Provider plugin   │
+├──────────┼──────────────────────┼───────────┼───────────────────┤
+│ Api      │ swiftcarplaylocation │ Create    │ awscloudformation │
+└──────────┴──────────────────────┴───────────┴───────────────────┘
 ```
 
 Deploy the API to your AWS account
