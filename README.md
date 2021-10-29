@@ -1,6 +1,8 @@
 # AWS Full Stack Swift with Apple CarPlay
 
-This application demonstrates a full-stack Apple CarPlay app that uses Swift for both the UI and the backend services in AWS.  The app implements the latest features of AWS Lambda that allow you to develop and deploy functions written in Swift as Docker images.
+![Image description](images/banner.jpg)
+
+This application demonstrates a full-stack Apple CarPlay app that uses Swift for both the UI and the backend services in AWS.  The app implements the new [AWS SDK for Swift](https://github.com/awslabs/aws-sdk-swift) and latest features of AWS Lambda that allow you to develop and deploy functions written in Swift as Docker images.
 
 This is important as it allows frontend developers who are proficient in Swift to leverage their skills in building out the backend of their applications.  It also enables an entire geneation of Swift engineers to build apps on AWS using their language of choice.
 
