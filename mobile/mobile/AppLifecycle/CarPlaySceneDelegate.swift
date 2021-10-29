@@ -16,6 +16,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     var foodTemplate: CPListTemplate?
     var weatherTemplate: CPInformationTemplate?
     
+    var vehicleMessageDisplayed = false
+    
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController, to window: CPWindow) {
         
         print("Connected to CarPlay.")
@@ -181,13 +183,19 @@ extension CarPlaySceneDelegate: VehicleMessageServiceDelegate {
         
         print("CarPlay received message from Cloud: \(message)")
         
-        let okAction = CPAlertAction(title: "OK", style: CPAlertAction.Style.default, handler: {item in
-            print("OK button pressed")
-            self.interfaceController?.dismissTemplate(animated: true, completion: nil)
-        })
-        
-        let actionTemplate = CPActionSheetTemplate(title: "New Message", message: message, actions: [okAction])
+        if (!self.vehicleMessageDisplayed){
+            
+            let okAction = CPAlertAction(title: "OK", style: CPAlertAction.Style.default, handler: {item in
+                print("OK button pressed")
+                self.interfaceController?.dismissTemplate(animated: true, completion: nil)
+                self.vehicleMessageDisplayed = false
+            })
+            
+            let actionTemplate = CPActionSheetTemplate(title: "New Message", message: message, actions: [okAction])
 
-        self.interfaceController?.presentTemplate(actionTemplate,animated: true, completion: nil)
+            self.interfaceController?.presentTemplate(actionTemplate,animated: true, completion: nil)
+            
+            self.vehicleMessageDisplayed = true
+        }
     }
 }
