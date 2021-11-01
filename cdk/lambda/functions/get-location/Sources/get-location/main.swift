@@ -2,7 +2,7 @@ import AWSLambdaRuntime
 import Foundation
 import AWSLocation
 
-// // define struct for function event arguments
+// define struct for function event arguments
 struct Event: Codable {
     let arguments: Arguments
 }
