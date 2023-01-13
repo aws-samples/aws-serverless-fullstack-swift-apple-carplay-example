@@ -24,3 +24,6 @@ team-provider-info.json
 # VS Code
 .vscode
 
+# XCode
+xcuserdata/
+

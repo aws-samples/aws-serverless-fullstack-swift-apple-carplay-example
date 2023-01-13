@@ -1,5 +1,5 @@
 # the image used to compile our Swift Lambda Function
-FROM swift:5.5.0-amazonlinux2 as builder
+FROM public.ecr.aws/docker/library/swift:5.7.2-amazonlinux2 as builder
 
 ARG TARGET_NAME
 

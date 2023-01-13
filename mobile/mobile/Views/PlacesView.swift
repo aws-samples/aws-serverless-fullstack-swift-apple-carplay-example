@@ -32,7 +32,9 @@ struct PlacesView: View {
                         PlaceTypeText(label: label)
                     } else {
                         Button(label, action: {
-                            fetch(placeType: type)
+                            Task {
+                                await fetch(placeType: type)
+                            }
                         })
                     }
                 }
@@ -52,9 +54,11 @@ struct PlacesView: View {
             }
             Spacer()
             FormButton(label: "Dismiss", action: {showView.toggle()}
-            ).onAppear(perform: {
-                fetch(placeType: selectedPlaceType)
-            })
+            ).onAppear {
+                Task {
+                    await fetch(placeType: selectedPlaceType)
+                }
+            }
         }
     }
         
@@ -74,7 +78,7 @@ struct PlacesView: View {
     }
         
     // function to call the Data Service and retrieve the closest places based on the requested PlaceType and the user's location
-    func fetch(placeType: PlaceType) {
+    func fetch(placeType: PlaceType) async {
         
         self.selectedPlaceType = placeType
         
@@ -82,18 +86,16 @@ struct PlacesView: View {
         
         isFetching = true
         
-        DataService().getPlaces(placeType: placeType, latitude: latitude, longitude: longitude, maxResults: 5) { result in
-            switch (result) {
-            case .success(let items):
-                for p in items {
-                    places.append(PlaceItem(name: p.name, address: p.address))
-                }
-            case .failure(let error):
-                print("Error fetching places: \(error)")
+        do {
+            let result = try await DataService().getPlaces(placeType: placeType, latitude: latitude, longitude: longitude, maxResults: 5)
+            for p in result {
+                places.append(PlaceItem(name: p.name, address: p.address))
             }
-            
-            isFetching = false
+        } catch {
+            print("Error fetching places: \(error)")
         }
+        
+        isFetching = false
     }
 }
 

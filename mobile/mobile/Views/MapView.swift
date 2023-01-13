@@ -58,7 +58,9 @@ struct MapView: View {
                 }
             }
         }
-        .onDisappear(perform: vehicleMessageService.cancelSubscription)
+        .onDisappear {
+            vehicleMessageService.cancelSubscription()
+        }
     }
 }
 

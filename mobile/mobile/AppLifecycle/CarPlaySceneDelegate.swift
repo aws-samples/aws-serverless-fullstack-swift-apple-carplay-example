@@ -81,7 +81,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didDisconnect interfaceController: CPInterfaceController, from window: CPWindow) {
 
         print("Disconnected from CarPlay.")
-        
+        self.vehicleMessageService?.cancelSubscription()
         self.interfaceController = nil
     }
     
@@ -101,21 +101,21 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         
     }
     
-    func getPlaces (template: CPListTemplate, latitude: Double, longitude: Double, placeType: PlaceType) {
+    func getPlaces (template: CPListTemplate, latitude: Double, longitude: Double, placeType: PlaceType) async {
         
         // call the Data Service to retrieve the requested PlaceTypes for the user's current location
         // and update the provided places template
         
         var listItems: [CPListItem] = [CPListItem]()
         
-        DataService().getPlaces(placeType: placeType, latitude: latitude, longitude: longitude, maxResults: 3) { result in
-            
-            switch (result) {
-            case .success(let places):
-
+        Task {
+            // call the Data Service to retrieve the weather for the user's current location and update the weatherTemplate
+            do {
+                let places = try await DataService().getPlaces(placeType: placeType, latitude: latitude, longitude: longitude, maxResults: 3)
+                
                 for place in places {
                     let item = CPListItem(text: place.name, detailText: place.address)
-                    
+
                     item.handler = { item, completion in
                         self.interfaceController?.popToRootTemplate(animated: true) {_, _ in
 
@@ -128,35 +128,34 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                                 primaryAction: CPAlertAction(title: "Go", style: CPAlertAction.Style.default, handler: {_ in }),
                                 secondaryAction: nil,
                                 duration: TimeInterval(20))
-                            
+
                             self.mapTemplate?.present(navigationAlert: alert, animated: true)
                         }
                     }
-        
+
                     listItems.append(item)
                 }
-            case .failure(let error):
+                
+                template.updateSections([CPListSection(items: listItems)])
+            } catch {
                 print("Error fetching places: \(error)")
             }
-
-            template.updateSections([CPListSection(items: listItems)])
         }
     }
     
-    func getWeather (template: CPInformationTemplate, latitude: Double, longitude: Double, city: String) {
+    func getWeather (template: CPInformationTemplate, latitude: Double, longitude: Double, city: String) async {
         
-        // call the Data Service to retrieve the weather for the user's current location and update the weatherTemplate
-        DataService().getWeather(latitude: latitude, longitude: longitude) { result in
-            switch (result) {
-            case .success(let item):
+        Task {
+            // call the Data Service to retrieve the weather for the user's current location and update the weatherTemplate
+            do {
+                let result = try await DataService().getWeather(latitude: latitude, longitude: longitude)
                 template.items.removeAll()
                 template.items.append(CPInformationItem(title: "City", detail: city))
-                template.items.append(CPInformationItem(title: "Temperature", detail: String(item.temperature)))
-                template.items.append(CPInformationItem(title: "Air Quality Index", detail: String(item.aqIndex)))
-            case .failure (let error):
+                template.items.append(CPInformationItem(title: "Temperature", detail: String(result.temperature)))
+                template.items.append(CPInformationItem(title: "Air Quality Index", detail: String(result.aqIndex)))
+            } catch {
                 print("Error fetching weather: \(error)")
             }
-
         }
     }
 }
@@ -167,10 +166,12 @@ extension CarPlaySceneDelegate: LocationServiceDelegate {
     // update template content based on the user's new location
     
     func locationService(latitude: Double, longitude: Double, city: String) {
-        getWeather(template: self.weatherTemplate!, latitude: latitude, longitude: longitude, city: city)
-        getPlaces(template: self.coffeeTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.coffee)
-        getPlaces(template: self.fuelTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.fuel)
-        getPlaces(template: self.foodTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.food)
+        Task {
+            await getWeather(template: self.weatherTemplate!, latitude: latitude, longitude: longitude, city: city)
+            await getPlaces(template: self.coffeeTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.coffee)
+            await getPlaces(template: self.fuelTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.fuel)
+            await getPlaces(template: self.foodTemplate!, latitude: latitude, longitude: longitude, placeType: PlaceType.food)
+        }
     }
 }
 

@@ -6,7 +6,9 @@
       "useexperimentalpipelinedtransformer": false,
       "enableiterativegsiupdates": false,
       "secondarykeyasgsi": true,
-      "skipoverridemutationinputtypes": true
+      "skipoverridemutationinputtypes": true,
+      "securityEnhancementNotification": false,
+      "showFieldAuthNotification": false
     },
     "frontend-ios": {
       "enablexcodeintegration": true
@@ -24,6 +26,12 @@
     },
     "appsync": {
       "generategraphqlpermissions": true
+    },
+    "project": {
+      "overrides": true
     }
+  },
+  "debug": {
+    "shareProjectConfig": false
   }
 }

@@ -1,12 +1,13 @@
 import * as path from "path"
-import * as cdk from '@aws-cdk/core';
-import * as Lambda from '@aws-cdk/aws-lambda'
-import * as iam from '@aws-cdk/aws-iam'
-import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
-import { CfnPlaceIndex } from "@aws-cdk/aws-location";
+import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import * as Lambda from 'aws-cdk-lib/aws-lambda';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager';
+import { CfnPlaceIndex } from 'aws-cdk-lib/aws-location'
 
 export class CdkStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // create secrets manager secret to hold the air quality api key
@@ -20,8 +21,7 @@ export class CdkStack extends cdk.Stack {
       indexName: 'SwiftCarPlayPlaceIndex',
       pricingPlan: 'RequestBasedUsage'
     })
-
-    // create the docker image based lambda function to get-weather
+      // create the docker image based lambda function to get-weather
     // pass in the api secret name and the api endpoint as environment variables
     let dockerfile = path.join(__dirname, "../lambda/functions/get-weather/");
 

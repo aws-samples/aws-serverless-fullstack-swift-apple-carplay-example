@@ -39,26 +39,27 @@ struct WeatherView: View {
             Spacer()
             FormButton(label: "Dismiss", action: {showView.toggle()})
         }
-        .onAppear (perform: fetch)
+        .onAppear {
+            Task {
+                await fetch()
+            }
+        }
     }
     
     // function to call the Data Service and retrieve the weather for the user's current location
-    func fetch() {
+    func fetch() async {
         
         isFetching = true
         
-        DataService().getWeather(latitude: latitude, longitude: longitude) { result in
-            
-            switch (result) {
-            case .success(let item):
-                aqIndex = item.aqIndex
-                temperature = item.temperature
-            case .failure(let error):
-                print("Error fetching weather: \(error)")
-            }
-
-            isFetching = false
+        do {
+            let result = try await DataService().getWeather(latitude: latitude, longitude: longitude)
+            aqIndex = result.aqIndex
+            temperature = result.temperature
+        } catch {
+            print("Error fetching weather: \(error)")
         }
+
+        isFetching = false
     }
 }
 

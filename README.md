@@ -30,19 +30,17 @@ The following software was used in the development of this application.  While i
 
 1. An AWS account in which you have Administrator access.
 
-2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (2.1.32) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
+2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (2.4.19) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
 
-3. [Node.js](https://nodejs.org/en/download/current/) (^16.8.0) with NPM (^7.19.1)
+3. [Node.js](https://nodejs.org/en/download/current/) (^16.8.1) with NPM (^8.12.2)
 
-4. [Typescript](https://www.npmjs.com/package/typescript) (^4.2.4) Typescript is required by the Cloud Development Kit (CDK).
+4. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^10.6.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
 
-6. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^6.3.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
+5. [IQ Air](https://www.iqair.com/us/air-pollution-data-api) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
-7. [IQ Air](https://www.iqair.com/us/air-pollution-data-api) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
+6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.15) Docker is used to compile the Swift Lambda functions into a Docker image. 
 
-8. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.1.1) Docker is used to compile the Swift Lambda functions into a Docker image. 
-
-9. [Xcode](https://developer.apple.com/xcode/) (13.0) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 14.0 enabled.
+7. [Xcode](https://developer.apple.com/xcode/) (14.2) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 16.0 enabled.
 
 ### **Installation**
 
@@ -53,19 +51,19 @@ The application utilizes the AWS Cloud Development Kit (CDK) and Docker to compi
 **Clone this code repository**
 
 ```
-$ git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carplay-example.git
+git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carplay-example.git
 ```
 
 **Switch to the project's CDK folder**
 
 ```
-$ cd aws-serverless-fullstack-swift-apple-carplay-example/cdk
+cd aws-serverless-fullstack-swift-apple-carplay-example/cdk
 ```
 
 **Install the CDK app's Node.js packages**
 
 ```
-$ npm install
+npm install
 ```
 
 **Deploy the CDK project**
@@ -73,19 +71,19 @@ $ npm install
 If you have not used the CDK in your AWS account you must first bootstrap the CDK.  This will configure your AWS account for interaction with the CDK.
 
 ```
-$ npx cdk bootstrap
+npx aws-cdk bootstrap
 ```
 
 View the resources the CDK will deploy into your account:
 
 ```
-$ npx cdk diff
+npx aws-cdk diff
 ```
 
 Deploy the resources into your account.  This will create 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  The CDK will use Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
 
 ```
-$ npx cdk deploy
+npx aws-cdk deploy
 ```
 
 **Configure Secrets Manager with the IQ Air API Key**
@@ -95,7 +93,7 @@ The CDK created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lam
 Replace the values in brackets with your values:
 
 ```
-$ aws secretsmanager put-secret-value --secret-id SwiftCarplayAPISecret --secret-string [your IQ Air API key]
+aws secretsmanager put-secret-value --secret-id SwiftCarplayAPISecret --secret-string [your IQ Air API key]
 ```
 
 **Initialize the CarPlay app and AWS AppSync API**
@@ -103,13 +101,13 @@ $ aws secretsmanager put-secret-value --secret-id SwiftCarplayAPISecret --secret
 Switch to the **mobile** folder of the application:
 
 ```
-$ cd ../mobile
+cd ../mobile
 ```
 
 Initialize the Amplify project that will create the AppSync GraphQL API
 
 ```
-$ amplify init
+amplify init
 
 ? Enter a name for the environment (dev)
 ? Choose your default editor: (Xcode Mac OS only)
@@ -120,8 +118,10 @@ $ amplify init
 Amplify will then begin to provision your account for the project deployment. Once your account has been provisioned, entering the *amplify status* command will show you the resources Amplify will create in your account:
 
 ```
-$ amplify status
+amplify status
+```
 
+```
   Current Environment: dev
     
 ┌──────────┬──────────────────────┬───────────┬───────────────────┐
@@ -134,9 +134,9 @@ $ amplify status
 Deploy the API to your AWS account
 
 ```
-$ amplify push
+amplify push
 
-? Do you want to update code for your updated GraphQL API (Y/n) N
+? Do you want to generate code for your newly created GraphQL API (Y/n) n
 ```
 
 You will then see a series of output messages as Amplify builds and deploys the app's CloudFormation templates, creating the API in your AWS account. 
@@ -151,7 +151,7 @@ Resources being created in your account include:
 This command will generate the Swift class and configuration files for your app to communicate with the the API.
 
 ```
-$ amplify codegen models
+amplify codegen models
 ```
 
 ## Run the CarPlay app
@@ -159,7 +159,7 @@ $ amplify codegen models
 From the **mobile** folder of the application open the project in Xcode:
 
 ```
-$ open mobile.xcodeproj
+open mobile.xcodeproj
 ```
 
 *Note - you can also open the project from the Xcode UI*
@@ -236,13 +236,13 @@ Once you are finished working with this project, you may want to delete the reso
 From the **mobile** folder delete the resources created by Amplify:
 
 ```
-$ amplify delete
+amplify delete
 ```
 
 From the **cdk** folder delete the resources created by the CDK:
 
 ```
-$ npx cdk destroy
+npx aws-cdk destroy
 ```
 
 ## License

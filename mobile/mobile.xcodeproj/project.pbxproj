@@ -10,7 +10,6 @@
 		053679B3FDA3F83CFA9C7538 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C101D39B099077397ECE27E /* Location.swift */; };
 		0930B51514FB4D3DBA1A9283 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675B0B847B14E69B8A4A546 /* Place.swift */; };
 		1A936FB2E39B4A1B84E0D38B /* Place+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC607458548E456C8742735D /* Place+Schema.swift */; };
-		1C10A3502631DF8500FB937D /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C10A34F2631DF8500FB937D /* AWSAPIPlugin */; };
 		1C1E5CED2626050400ED9C61 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CEC2626050400ED9C61 /* DataService.swift */; };
 		1C1E5CF12626053C00ED9C61 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF02626053C00ED9C61 /* Queries.swift */; };
 		1C1E5CF42626098400ED9C61 /* CarPlayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF32626098400ED9C61 /* CarPlayMapView.swift */; };
@@ -22,10 +21,9 @@
 		1C1E5D02262609AD00ED9C61 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */; };
 		1C1E5D03262609AD00ED9C61 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */; };
 		1C1E5D06262609F600ED9C61 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D05262609F600ED9C61 /* LocationService.swift */; };
-		1C1E5D09262609FF00ED9C61 /* VehicleMessageSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D08262609FF00ED9C61 /* VehicleMessageSubscription.swift */; };
+		1C1E5D09262609FF00ED9C61 /* VehicleMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */; };
 		1C1E5D0C26260A1C00ED9C61 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */; };
 		1C1E5D0F26260A5B00ED9C61 /* VehicleMessage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D0E26260A5B00ED9C61 /* VehicleMessage+Extensions.swift */; };
-		1C26A4B52628D63600C9474F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C26A4B42628D63600C9474F /* Entitlements.plist */; };
 		1C26A4B82628D7EF00C9474F /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26A4B72628D7EF00C9474F /* CarPlaySceneDelegate.swift */; };
 		1C655991264096F900BA16DB /* PlaceType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C655990264096F900BA16DB /* PlaceType+Extensions.swift */; };
 		1C6AA5EC2625F591009BB126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6AA5EB2625F591009BB126 /* AppDelegate.swift */; };
@@ -34,8 +32,9 @@
 		1C6AA5F22625F592009BB126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F12625F592009BB126 /* Assets.xcassets */; };
 		1C6AA5F52625F592009BB126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F42625F592009BB126 /* Preview Assets.xcassets */; };
 		1C6AA5F82625F592009BB126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F62625F592009BB126 /* LaunchScreen.storyboard */; };
-		1CCBA1692631DD5200825644 /* AWSPluginsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CCBA1682631DD5200825644 /* AWSPluginsCore */; };
-		1CCBA16B2631DD5200825644 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 1CCBA16A2631DD5200825644 /* Amplify */; };
+		1C7B41A92970A493001CD722 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41A82970A493001CD722 /* AWSAPIPlugin */; };
+		1C7B41AB2970A493001CD722 /* AWSPluginsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41AA2970A493001CD722 /* AWSPluginsCore */; };
+		1C7B41AD2970A493001CD722 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41AC2970A493001CD722 /* Amplify */; };
 		221A047359D14493A2D67F06 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F05F297469847E2B55342EA /* awsconfiguration.json */; };
 		5121E161A261428F97A16F0C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E90F2050E40D3BBE94074 /* Weather.swift */; };
 		52367A61AB7940F3AC0D36CF /* VehicleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749E96BB53447D9A2B3D892 /* VehicleMessage.swift */; };
@@ -64,7 +63,7 @@
 		1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		1C1E5D05262609F600ED9C61 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		1C1E5D08262609FF00ED9C61 /* VehicleMessageSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleMessageSubscription.swift; sourceTree = "<group>"; };
+		1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleMessageService.swift; sourceTree = "<group>"; };
 		1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
 		1C1E5D0E26260A5B00ED9C61 /* VehicleMessage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VehicleMessage+Extensions.swift"; sourceTree = "<group>"; };
 		1C26A4B42628D63600C9474F /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
@@ -101,9 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C10A3502631DF8500FB937D /* AWSAPIPlugin in Frameworks */,
-				1CCBA16B2631DD5200825644 /* Amplify in Frameworks */,
-				1CCBA1692631DD5200825644 /* AWSPluginsCore in Frameworks */,
+				1C7B41AD2970A493001CD722 /* Amplify in Frameworks */,
+				1C7B41AB2970A493001CD722 /* AWSPluginsCore in Frameworks */,
+				1C7B41A92970A493001CD722 /* AWSAPIPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */,
-				1C1E5D08262609FF00ED9C61 /* VehicleMessageSubscription.swift */,
+				1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */,
 				1C1E5D05262609F600ED9C61 /* LocationService.swift */,
 				1C1E5CEC2626050400ED9C61 /* DataService.swift */,
 				1C1E5CF02626053C00ED9C61 /* Queries.swift */,
@@ -249,9 +248,9 @@
 			);
 			name = mobile;
 			packageProductDependencies = (
-				1CCBA1682631DD5200825644 /* AWSPluginsCore */,
-				1CCBA16A2631DD5200825644 /* Amplify */,
-				1C10A34F2631DF8500FB937D /* AWSAPIPlugin */,
+				1C7B41A82970A493001CD722 /* AWSAPIPlugin */,
+				1C7B41AA2970A493001CD722 /* AWSPluginsCore */,
+				1C7B41AC2970A493001CD722 /* Amplify */,
 			);
 			productName = mobile;
 			productReference = 1C6AA5E82625F591009BB126 /* mobile.app */;
@@ -281,7 +280,7 @@
 			);
 			mainGroup = 1C6AA5DF2625F591009BB126;
 			packageReferences = (
-				1CCBA1672631DD5200825644 /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */,
 			);
 			productRefGroup = 1C6AA5E92625F591009BB126 /* Products */;
 			projectDirPath = "";
@@ -297,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C26A4B52628D63600C9474F /* Entitlements.plist in Resources */,
 				1C6AA5F82625F592009BB126 /* LaunchScreen.storyboard in Resources */,
 				1C6AA5F52625F592009BB126 /* Preview Assets.xcassets in Resources */,
 				1C6AA5F22625F592009BB126 /* Assets.xcassets in Resources */,
@@ -331,7 +329,7 @@
 				1C1E5CED2626050400ED9C61 /* DataService.swift in Sources */,
 				1C1E5D0C26260A1C00ED9C61 /* Subscriptions.swift in Sources */,
 				888137310A034F4B938A3501 /* Query.swift in Sources */,
-				1C1E5D09262609FF00ED9C61 /* VehicleMessageSubscription.swift in Sources */,
+				1C1E5D09262609FF00ED9C61 /* VehicleMessageService.swift in Sources */,
 				1C1E5CFF262609AD00ED9C61 /* MessagesView.swift in Sources */,
 				1C1E5CFD262609AD00ED9C61 /* FormButton.swift in Sources */,
 				1C1E5CF42626098400ED9C61 /* CarPlayMapView.swift in Sources */,
@@ -545,30 +543,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1CCBA1672631DD5200825644 /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+		1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			repositoryURL = "https://github.com/aws-amplify/amplify-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.1;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C10A34F2631DF8500FB937D /* AWSAPIPlugin */ = {
+		1C7B41A82970A493001CD722 /* AWSAPIPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CCBA1672631DD5200825644 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = AWSAPIPlugin;
 		};
-		1CCBA1682631DD5200825644 /* AWSPluginsCore */ = {
+		1C7B41AA2970A493001CD722 /* AWSPluginsCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CCBA1672631DD5200825644 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = AWSPluginsCore;
 		};
-		1CCBA16A2631DD5200825644 /* Amplify */ = {
+		1C7B41AC2970A493001CD722 /* Amplify */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CCBA1672631DD5200825644 /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = Amplify;
 		};
 /* End XCSwiftPackageProductDependency section */

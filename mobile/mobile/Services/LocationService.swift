@@ -81,15 +81,13 @@ extension LocationService: CLLocationManagerDelegate {
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
         
-        // call to the Appsync API to retrieve the user's current City based on their current location
-        DataService().getLocation(latitude: self.latitude, longitude: self.longitude) { result in
-
-            switch (result) {
-            case .success(let city):
-                self.city = city.name
+        Task {
+            do {
+                let result = try await DataService().getLocation(latitude: self.latitude, longitude: self.longitude)
+                self.city = result.name
                 self.delegate?.locationService(latitude: self.latitude, longitude: self.longitude, city: self.city)
-            case .failure(let error):
-                print("Error fetching city: \(error)")
+            } catch {
+                print("Error fetching location: \(error)")
             }
         }
     }
