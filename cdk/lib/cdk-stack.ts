@@ -32,6 +32,7 @@ export class CdkStack extends cdk.Stack {
           "TARGET_NAME":"get-weather"
       }}),
       timeout:cdk.Duration.minutes(3),
+      architecture: Lambda.Architecture.X86_64,
       memorySize: 512,
       environment: {
         "API_KEY_SECRET_NAME": aqiAPIKeySecret.secretName,
@@ -52,6 +53,7 @@ export class CdkStack extends cdk.Stack {
           "TARGET_NAME":"get-places"
       }}),
       timeout:cdk.Duration.minutes(3),
+      architecture: Lambda.Architecture.X86_64,
       memorySize: 512,
       environment: {
         "PLACE_INDEX_NAME": placeIndex.indexName
@@ -77,6 +79,7 @@ export class CdkStack extends cdk.Stack {
           "TARGET_NAME":"get-location"
       }}),
       timeout:cdk.Duration.minutes(3),
+      architecture: Lambda.Architecture.X86_64,
       memorySize: 512,
       environment: {
         "PLACE_INDEX_NAME": placeIndex.indexName

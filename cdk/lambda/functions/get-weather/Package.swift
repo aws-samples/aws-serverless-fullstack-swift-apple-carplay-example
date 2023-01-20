@@ -11,7 +11,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-server/swift-aws-lambda-runtime", branch: "main"),
         .package(url: "https://github.com/swift-server/async-http-client", from: "1.13.1"),
-        .package(url: "https://github.com/awslabs/aws-sdk-swift", from: "0.8.0")
+        .package(url: "https://github.com/awslabs/aws-sdk-swift", from: "0.9.0")
     ],
     targets: [
         .executableTarget(
