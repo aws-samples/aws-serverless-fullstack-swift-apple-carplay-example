@@ -17,6 +17,10 @@ extension VehicleMessage {
   public static let schema = defineSchema { model in
     let vehicleMessage = VehicleMessage.keys
     
+    model.authRules = [
+      rule(allow: .public, operations: [.create, .update, .delete, .read])
+    ]
+    
     model.pluralName = "VehicleMessages"
     
     model.fields(

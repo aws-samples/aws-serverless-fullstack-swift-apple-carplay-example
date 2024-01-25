@@ -30,17 +30,17 @@ The following software was used in the development of this application.  While i
 
 1. An AWS account in which you have Administrator access.
 
-2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (2.4.19) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
+2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (^2.15.3) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
 
-3. [Node.js](https://nodejs.org/en/download/current/) (^16.8.1) with NPM (^8.12.2)
+3. [Node.js](https://nodejs.org/en/download/current/) (^18.19.0) with NPM (^10.1.0)
 
-4. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^10.6.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
+4. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^12.10.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
 
-5. [IQ Air](https://www.iqair.com/us/air-pollution-data-api) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
+5. [IQ Air](https://dashboard.iqair.com/) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
 6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.15) Docker is used to compile the Swift Lambda functions into a Docker image. 
 
-7. [Xcode](https://developer.apple.com/xcode/) (14.2) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 16.0 enabled.
+7. [Xcode](https://developer.apple.com/xcode/) (15.2) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 17.0 enabled.
 
 ### **Installation**
 
