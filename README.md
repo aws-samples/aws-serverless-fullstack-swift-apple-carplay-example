@@ -15,13 +15,13 @@ The application tracks the user's current location and displays the current weat
 
 ## Architecture
 
-![Image description](images/architecture.jpg)
+![Image description](images/architecture.png)
 
 1. The Apple CarPlay app is written in Swift and uses AWS Amplify libraries to communicate with services in the AWS Cloud.
 2. All data is served to the client application via an AWS AppSync GraphQL API.  As the client changes its location, queries are sent via the API to obtain weather, air quality, and points of interest in the vicinity of the user.
 3. The AWS AppSync GraphQL API uses Lambda functions written in Swift to interact with Amazon Location Service for points of interest.  It also communicates with a 3rd party API outside of AWS for weather and air quality. The API key for the 3rd party weather service is stored in AWS Secrets Manager.
 4. The Lambda functions use the new [AWS SDK for Swift](https://github.com/awslabs/aws-sdk-swift) to interact with the AWS services!
-5. The client establishes a subscription to AWS AppSync to receive real-time notifications triggered from the cloud.  These messages are also stored in an Amazon DynamoDB table.
+5. The client establishes a subscription to AWS AppSync to receive real-time notifications triggered from the cloud.
 
 ## Getting Started
 
@@ -34,13 +34,13 @@ The following software was used in the development of this application.  While i
 
 3. [Node.js](https://nodejs.org/en/download/current/) (^18.19.0) with NPM (^10.1.0)
 
-4. [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) used to generate the AWS services used by the application.
+4. [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) (^1.103.0) used to generate the AWS services used by the application.
 
 5. [IQ Air API Key](https://dashboard.iqair.com/) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
-6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.15) Docker is used to compile the Swift Lambda functions into a Docker image. 
+6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (^4.15) Docker is used to compile the Swift Lambda functions into a Docker image. 
 
-7. [Xcode](https://developer.apple.com/xcode/) (15.2) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 17.0 enabled.
+7. [Xcode](https://developer.apple.com/xcode/) (^15.2) Xcode is used to build and debug the CarPlay application.  You will need iOS Simulator 17.0 enabled.
 
 ### **Installation**
 
@@ -56,9 +56,7 @@ git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carpla
 
 **Initialize the Backend**
 
-The solution uses SAM to create and deploy the AWS services in your account.
-
-First, initialize the SAM project from the public template.
+First, initialize the SAM project from the public GraphQL template.
 ```
 sam init --location gh:aws-samples/aws-sam-swift
 ```
