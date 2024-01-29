@@ -195,7 +195,7 @@ The app will display a map with the user's current location.  Click the map to v
 
 **Send a real-time message to the application from AWS**
 
-To send a message to the driver, logon to the AWS Console and navigate to the AppSync service.  From there select the **swiftcarplaylocation** API.
+To send a message to the driver, logon to the AWS Console and navigate to the AppSync service.  From there select the **SwiftGraphQLApi** API.
 
 From the API screen select the **Run a Query** button.  Paste the following GraphQL mutation code into the middle query panel and click the orange Run arrow button
 
