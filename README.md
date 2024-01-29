@@ -61,7 +61,6 @@ The solution uses SAM to create and deploy the AWS services in your account.
 First, initialize the SAM project from the public template.
 ```
 sam init --location gh:aws-samples/aws-sam-swift
-cd aws-serverless-fullstack-swift-apple-carplay-example/sam
 ```
 
 Select template 3 *Serverless GraphQL API (GraphQL API using AWS AppSync and Amazon Location Service)* template.
@@ -79,7 +78,7 @@ Select a template
 ```
 **Build and deploy the SAM project**
 
-The *sam build* command compiles your Swift Lambda functions and prepares your prject for deployment.
+The *sam build* command compiles your Swift Lambda functions and prepares your prject for deployment. SAM uses Docker on your local machine to compile the Lambda Functions.
 
 Switch to the **sam** folder and build the project.
 
@@ -88,7 +87,7 @@ cd sam
 sam build
 ```
 
-The *sam deploy* command deploys you application to the AWS Cloud. This includes 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  SAM uses Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
+The *sam deploy* command deploys your application to AWS. This includes 4 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.
 
 If you are deploying to a region other than *us-east-1* specify the region when prompted. Accept the default value for all other prompts.
 
@@ -108,7 +107,7 @@ aws secretsmanager put-secret-value --secret-id SwiftAPIWeatherApiKeySecret --se
 
 **Configure the Amplify Libraries**
 
-The application uses Amplify Swift libraries to communicate with the services in your AWS account. You create a configuration file for the application to discover your specific API values.
+The application uses Amplify Swift libraries to communicate with your GraphQL API. You create a configuration file for the application to use your API.
 
 Switch to the **mobile** folder of the application:
 
@@ -204,17 +203,14 @@ From the API screen select the **Run a Query** button.  Paste the following Grap
 
 ```
 mutation MyMutation {
-  createVehicleMessage(input: {
-    message: "Pickup package", 
-    owner: "Vehicle1", 
-    timestamp: "2021-04-21T19:36:30.653Z"}
+  createMessage(input: {
+    text: "Pickup package", 
+    recipient: "Vehicle1"}
   ) {
-    createdAt
     id
-    message
-    owner
+    text
+    recipient
     timestamp
-    updatedAt
   }
 }
 ```
