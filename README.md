@@ -6,7 +6,7 @@ This application demonstrates a full-stack Apple CarPlay app that uses Swift for
 
 This is important as it allows frontend developers who are proficient in Swift to leverage their skills in building out the backend of their applications.  It also enables an entire geneation of Swift engineers to build apps on AWS using their language of choice.
 
-This sample app is useful for iOS/CarPlay developers learning how to interact with backend services running on AWS.  It is also beneficial for customers who want to build their backend infrastructure using Swift, regardless if there is an iOS front end component.  Explore the CDK portion of this project to discover how to build and deploy Swift based Lambda functions to AWS.
+This sample app is useful for iOS/CarPlay developers learning how to interact with backend services running on AWS.  It is also beneficial for customers who want to build their backend infrastructure using Swift, regardless if there is an iOS front end component.  Explore the SAM portion of this project to discover how to build and deploy Swift based Lambda functions to AWS.
 
 ![Image description](images/carplay.jpg)
 
@@ -30,13 +30,13 @@ The following software was used in the development of this application.  While i
 
 1. An AWS account in which you have Administrator access.
 
-2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (^2.15.3) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the CDK, Amplify, and the CLI.
+2. [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) (^2.15.3) the AWS Command Line Interface (CLI) is used to configure your connection credentials to AWS.  These credentials are used by the AWS Serverless Application Model (SAM).
 
 3. [Node.js](https://nodejs.org/en/download/current/) (^18.19.0) with NPM (^10.1.0)
 
 4. [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) used to generate the AWS services used by the application.
 
-5. [IQ Air](https://dashboard.iqair.com/) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
+5. [IQ Air API Key](https://dashboard.iqair.com/) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
 6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (4.15) Docker is used to compile the Swift Lambda functions into a Docker image. 
 
@@ -54,31 +54,51 @@ The application utilizes the AWS Serverless Application Model (SAM) and Docker t
 git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carplay-example.git
 ```
 
-**Switch to the project's SAM folder**
+**Initialize the Backend**
 
+The solution uses SAM to create and deploy the AWS services in your account.
+
+First, initialize the SAM project from the public template.
 ```
+sam init --location gh:aws-samples/aws-sam-swift
 cd aws-serverless-fullstack-swift-apple-carplay-example/sam
 ```
 
+Select template 3 *Serverless GraphQL API (GraphQL API using AWS AppSync and Amazon Location Service)* template.
+
+Enter *sam* as the project name.
+
+```bash
+Select a template
+    1 - Hello World (Hello World on AWS)
+    2 - Serverless REST API (REST API using Amazon API Gateway and Amazon DynamoDB)
+    3 - Serverless GraphQL API (GraphQL API using AWS AppSync and Amazon Location Service)
+    Choose from [1/2/3] (1): 3
+
+[1/1] project_name (Swift Graphql API on AWS): sam
+```
 **Build and deploy the SAM project**
 
+The *sam build* command compiles your Swift Lambda functions and prepares your prject for deployment.
+
+Switch to the **sam** folder and build the project.
+
 ```
+cd sam
 sam build
 ```
+
+The *sam deploy* command deploys you application to the AWS Cloud. This includes 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  SAM uses Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
+
+If you are deploying to a region other than *us-east-1* specify the region when prompted. Accept the default value for all other prompts.
 
 ```
 sam deploy --guided
 ```
 
-Deploy the resources into your account.  This will create 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  The CDK will use Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
-
-```
-npx aws-cdk deploy
-```
-
 **Configure Secrets Manager with the IQ Air API Key**
 
-The CDK created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lambda will use this secret for the key to access the IQ Air API.  Use the AWS CLI to update the secret with the API key you obtained from the IQ Air site.
+SAM created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lambda uses this secret to obtain the API Key for the IQ Air API.  Use the AWS CLI to update the secret with the API key you obtained from the IQ Air site.
 
 Replace the values in brackets with your values:
 
@@ -86,7 +106,9 @@ Replace the values in brackets with your values:
 aws secretsmanager put-secret-value --secret-id SwiftAPIWeatherApiKeySecret --secret-string [your IQ Air API key]
 ```
 
-**Initialize the CarPlay app and AWS AppSync API**
+**Configure the Amplify Libraries**
+
+The application uses Amplify Swift libraries to communicate with the services in your AWS account. You create a configuration file for the application to discover your specific API values.
 
 Switch to the **mobile** folder of the application:
 
@@ -94,54 +116,38 @@ Switch to the **mobile** folder of the application:
 cd ../mobile
 ```
 
-Initialize the Amplify project that will create the AppSync GraphQL API
+When you deloyed the SAM application, 2 values were output at the end of the deployment.
 
-```
-amplify init
+```bash
+Outputs
+------------------------------------------------------------------------------------------------------------
+Key                 APIEndpointValue
+Description         AppSync API Endpoint
+Value               [your-api-endpoint]
 
-? Enter a name for the environment (dev)
-? Choose your default editor: (Xcode Mac OS only)
-? Select the authentication method you want to use: (AWS profile)
-? Please choose the profile you want to use (default)
-```
+Key                 ApiKeyValue
+Description         API Key
+Value               [your-api-key]
 
-Amplify will then begin to provision your account for the project deployment. Once your account has been provisioned, entering the *amplify status* command will show you the resources Amplify will create in your account:
-
-```
-amplify status
-```
-
-```
-  Current Environment: dev
-    
-┌──────────┬──────────────────────┬───────────┬───────────────────┐
-│ Category │ Resource name        │ Operation │ Provider plugin   │
-├──────────┼──────────────────────┼───────────┼───────────────────┤
-│ Api      │ swiftcarplaylocation │ Create    │ awscloudformation │
-└──────────┴──────────────────────┴───────────┴───────────────────┘
+------------------------------------------------------------------------------------------------------------
 ```
 
-Deploy the API to your AWS account
+Pass these values, and your AWS region, to the **amplify-config.sh** script.
 
+```bash
+./scripts/amplify-config.sh \
+[your-api-endpoint] \
+[your-api-key] \
+[region]
 ```
-amplify push
 
-? Do you want to generate code for your newly created GraphQL API (Y/n) n
-```
+For example:
 
-You will then see a series of output messages as Amplify builds and deploys the app's CloudFormation templates, creating the API in your AWS account. 
-
-Resources being created in your account include:
-
-- AppSync GraphQL API
-- DynamoDB Table
-
-**Generate the Swift client side code and credentials:**
-
-This command will generate the Swift class and configuration files for your app to communicate with the the API.
-
-```
-amplify codegen models
+```bash
+./scripts/amplify-config.sh \
+https://your-api.appsync-api.us-east-1.amazonaws.com/graphql \
+1234567890abcdefg \
+us-east-1
 ```
 
 ## Run the CarPlay app
@@ -223,16 +229,10 @@ You should see the message delivered to both the CarPlay and iPhone apps.
 
 Once you are finished working with this project, you may want to delete the resources it created in your AWS account.  
 
-From the **mobile** folder delete the resources created by Amplify:
+From the **sam** folder delete the resources created by the SAM:
 
 ```
-amplify delete
-```
-
-From the **cdk** folder delete the resources created by the CDK:
-
-```
-npx aws-cdk destroy
+sam delete
 ```
 
 ## License
