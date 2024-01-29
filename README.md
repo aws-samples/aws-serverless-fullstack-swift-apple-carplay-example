@@ -201,10 +201,7 @@ From the API screen select the **Run a Query** button.  Paste the following Grap
 
 ```
 mutation MyMutation {
-  createMessage(input: {
-    text: "Pickup package", 
-    recipient: "Vehicle1"}
-  ) {
+  createMessage(text: "Pickup package", recipient: "Vehicle1") {
     id
     text
     recipient
@@ -215,9 +212,9 @@ mutation MyMutation {
 
 Console screenshot:
 
-![Image description](images/carplay-send-message.jpg)
+![Image description](images/subscription.png)
 
-You should see the message delivered to both the CarPlay and iPhone apps.
+You should see the message delivered to both the CarPlay and iPhone screens.
 
 ## Cleanup
 
