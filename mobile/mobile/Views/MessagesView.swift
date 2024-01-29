@@ -4,7 +4,7 @@ import SwiftUI
 struct MessagesView: View {
     
     @Binding var showView: Bool
-    @Binding var messages: [VehicleMessage]
+    @Binding var messages: [Message]
     
     var body: some View {
         Text("Messages")
@@ -19,7 +19,7 @@ struct MessagesView: View {
             } else {
                 List {
                     ForEach (messages) { item in
-                        Text(item.message)
+                        Text(item.text)
                     }
                 }
             }
@@ -33,3 +33,4 @@ struct MessagesView: View {
         }
     }
 }
+

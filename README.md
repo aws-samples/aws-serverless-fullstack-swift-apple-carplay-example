@@ -34,7 +34,7 @@ The following software was used in the development of this application.  While i
 
 3. [Node.js](https://nodejs.org/en/download/current/) (^18.19.0) with NPM (^10.1.0)
 
-4. [Amplify CLI](https://docs.amplify.aws/cli/start/install) (^12.10.1) Amplify is used to create the AWS AppSync API and generate the client side Swift code to interact with AWS.
+4. [AWS Serverless Application Model (SAM)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) used to generate the AWS services used by the application.
 
 5. [IQ Air](https://dashboard.iqair.com/) is a 3rd party API used to obtain weather and air quality for a specified location.  Create a free Community Edition API key.
 
@@ -44,7 +44,7 @@ The following software was used in the development of this application.  While i
 
 ### **Installation**
 
-The application utilizes the AWS Cloud Development Kit (CDK) and Docker to compile and deploy your Swift based Lambda functions.  It also utilizes AWS Amplify to build the AppSync GraphQL API the front-end uses to receive data.
+The application utilizes the AWS Serverless Application Model (SAM) and Docker to compile and deploy your Swift based Lambda functions.
 
 *Make sure you have [configured the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html) prior to following these instructions as several steps assume you gave defined credentials for your default AWS account.*
 
@@ -54,30 +54,20 @@ The application utilizes the AWS Cloud Development Kit (CDK) and Docker to compi
 git clone git@github.com:aws-samples/aws-serverless-fullstack-swift-apple-carplay-example.git
 ```
 
-**Switch to the project's CDK folder**
+**Switch to the project's SAM folder**
 
 ```
-cd aws-serverless-fullstack-swift-apple-carplay-example/cdk
+cd aws-serverless-fullstack-swift-apple-carplay-example/sam
 ```
 
-**Install the CDK app's Node.js packages**
+**Build and deploy the SAM project**
 
 ```
-npm install
+sam build
 ```
 
-**Deploy the CDK project**
-
-If you have not used the CDK in your AWS account you must first bootstrap the CDK.  This will configure your AWS account for interaction with the CDK.
-
 ```
-npx aws-cdk bootstrap
-```
-
-View the resources the CDK will deploy into your account:
-
-```
-npx aws-cdk diff
+sam deploy --guided
 ```
 
 Deploy the resources into your account.  This will create 2 Lambda functions, an Amazon Location Place Index, and a Secrets Manager secret.  The CDK will use Docker on your local machine to compile the Lambda Function Swift code into images and push them to the Amazon Elastic Container Registry (ECR).
@@ -93,7 +83,7 @@ The CDK created a secret in AWS Secrets Manager to hold the IQ Air API key.  Lam
 Replace the values in brackets with your values:
 
 ```
-aws secretsmanager put-secret-value --secret-id SwiftCarplayAPISecret --secret-string [your IQ Air API key]
+aws secretsmanager put-secret-value --secret-id SwiftAPIWeatherApiKeySecret --secret-string [your IQ Air API key]
 ```
 
 **Initialize the CarPlay app and AWS AppSync API**

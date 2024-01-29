@@ -83,7 +83,7 @@ extension LocationService: CLLocationManagerDelegate {
         
         Task {
             do {
-                let result = try await DataService().getLocation(latitude: self.latitude, longitude: self.longitude)
+                let result = try await DataService().getCity(latitude: self.latitude, longitude: self.longitude)
                 self.city = result.name
                 self.delegate?.locationService(latitude: self.latitude, longitude: self.longitude, city: self.city)
             } catch {
@@ -92,7 +92,4 @@ extension LocationService: CLLocationManagerDelegate {
         }
     }
 }
-
-
-
 

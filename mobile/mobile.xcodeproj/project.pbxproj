@@ -3,244 +3,202 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		053679B3FDA3F83CFA9C7538 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C101D39B099077397ECE27E /* Location.swift */; };
-		0930B51514FB4D3DBA1A9283 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675B0B847B14E69B8A4A546 /* Place.swift */; };
-		1A936FB2E39B4A1B84E0D38B /* Place+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC607458548E456C8742735D /* Place+Schema.swift */; };
-		1C1E5CED2626050400ED9C61 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CEC2626050400ED9C61 /* DataService.swift */; };
-		1C1E5CF12626053C00ED9C61 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF02626053C00ED9C61 /* Queries.swift */; };
-		1C1E5CF42626098400ED9C61 /* CarPlayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF32626098400ED9C61 /* CarPlayMapView.swift */; };
-		1C1E5CFD262609AD00ED9C61 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF6262609AD00ED9C61 /* FormButton.swift */; };
-		1C1E5CFE262609AD00ED9C61 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF7262609AD00ED9C61 /* MapButton.swift */; };
-		1C1E5CFF262609AD00ED9C61 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF8262609AD00ED9C61 /* MessagesView.swift */; };
-		1C1E5D00262609AD00ED9C61 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CF9262609AD00ED9C61 /* MapView.swift */; };
-		1C1E5D01262609AD00ED9C61 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CFA262609AD00ED9C61 /* PlacesView.swift */; };
-		1C1E5D02262609AD00ED9C61 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */; };
-		1C1E5D03262609AD00ED9C61 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */; };
-		1C1E5D06262609F600ED9C61 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D05262609F600ED9C61 /* LocationService.swift */; };
-		1C1E5D09262609FF00ED9C61 /* VehicleMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */; };
-		1C1E5D0C26260A1C00ED9C61 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */; };
-		1C1E5D0F26260A5B00ED9C61 /* VehicleMessage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1E5D0E26260A5B00ED9C61 /* VehicleMessage+Extensions.swift */; };
-		1C26A4B82628D7EF00C9474F /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C26A4B72628D7EF00C9474F /* CarPlaySceneDelegate.swift */; };
-		1C655991264096F900BA16DB /* PlaceType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C655990264096F900BA16DB /* PlaceType+Extensions.swift */; };
-		1C6AA5EC2625F591009BB126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6AA5EB2625F591009BB126 /* AppDelegate.swift */; };
-		1C6AA5EE2625F591009BB126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6AA5ED2625F591009BB126 /* SceneDelegate.swift */; };
-		1C6AA5F02625F591009BB126 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6AA5EF2625F591009BB126 /* ContentView.swift */; };
-		1C6AA5F22625F592009BB126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F12625F592009BB126 /* Assets.xcassets */; };
-		1C6AA5F52625F592009BB126 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F42625F592009BB126 /* Preview Assets.xcassets */; };
-		1C6AA5F82625F592009BB126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6AA5F62625F592009BB126 /* LaunchScreen.storyboard */; };
-		1C7B41A92970A493001CD722 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41A82970A493001CD722 /* AWSAPIPlugin */; };
-		1C7B41AB2970A493001CD722 /* AWSPluginsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41AA2970A493001CD722 /* AWSPluginsCore */; };
-		1C7B41AD2970A493001CD722 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 1C7B41AC2970A493001CD722 /* Amplify */; };
-		221A047359D14493A2D67F06 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F05F297469847E2B55342EA /* awsconfiguration.json */; };
-		5121E161A261428F97A16F0C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1E90F2050E40D3BBE94074 /* Weather.swift */; };
-		52367A61AB7940F3AC0D36CF /* VehicleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749E96BB53447D9A2B3D892 /* VehicleMessage.swift */; };
-		583DE4E58BA8433398FE08A3 /* Subscription+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317B1916C8EC47D8947C1BBD /* Subscription+Schema.swift */; };
-		65F64C2CF9384D7484D427A7 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65AE07FAA645B5943F8D9A /* AmplifyModels.swift */; };
-		67E0EF68315E474596F090A4 /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD72265D7893437FB68BC964 /* PlaceType.swift */; };
-		78C8C72F1E8D6391D9857EF3 /* Location+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C50F61276751A58977372 /* Location+Schema.swift */; };
-		7FE1EE1B5960420BACFD3F5D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60D2E626DE48CBACBA4063 /* amplifyconfiguration.json */; };
-		888137310A034F4B938A3501 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006CED48BAC4777AABCCFBC /* Query.swift */; };
-		A4A13911029A432E9ECABD40 /* Weather+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A134D4FE1B544F1BCAD7E77 /* Weather+Schema.swift */; };
-		BE201746CF984BB5BC3812F1 /* Query+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486BC6F23F74B379571BBD4 /* Query+Schema.swift */; };
-		CB6A389B3A0F4BD2AEBC7177 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE0A6DA0A64E288DDD7AA9 /* Subscription.swift */; };
-		F5D502F56ADC4BBCB079DA19 /* VehicleMessage+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF62F4AEFD0D44458C9A3C0A /* VehicleMessage+Schema.swift */; };
+		1C9F4B272B65D8D20013245C /* mobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B262B65D8D20013245C /* mobileApp.swift */; };
+		1C9F4B292B65D8D20013245C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B282B65D8D20013245C /* ContentView.swift */; };
+		1C9F4B2B2B65D8D30013245C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9F4B2A2B65D8D30013245C /* Assets.xcassets */; };
+		1C9F4B2E2B65D8D30013245C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C9F4B2D2B65D8D30013245C /* Preview Assets.xcassets */; };
+		1C9F4B362B65D9550013245C /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F4B352B65D9550013245C /* AWSAPIPlugin */; };
+		1C9F4B382B65D9550013245C /* AWSCloudWatchLoggingPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F4B372B65D9550013245C /* AWSCloudWatchLoggingPlugin */; };
+		1C9F4B3A2B65D9550013245C /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F4B392B65D9550013245C /* AWSCognitoAuthPlugin */; };
+		1C9F4B3C2B65D9550013245C /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F4B3B2B65D9550013245C /* AWSDataStorePlugin */; };
+		1C9F4B3E2B65D9550013245C /* AWSLocationGeoPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9F4B3D2B65D9550013245C /* AWSLocationGeoPlugin */; };
+		1C9F4B4C2B65D98E0013245C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B402B65D98E0013245C /* Location.swift */; };
+		1C9F4B4D2B65D98E0013245C /* Weather+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B412B65D98E0013245C /* Weather+Schema.swift */; };
+		1C9F4B4E2B65D98E0013245C /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1C9F4B422B65D98E0013245C /* schema.graphql */; };
+		1C9F4B4F2B65D98E0013245C /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B432B65D98E0013245C /* AmplifyModels.swift */; };
+		1C9F4B502B65D98E0013245C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B442B65D98E0013245C /* Message.swift */; };
+		1C9F4B512B65D98E0013245C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B452B65D98E0013245C /* Place.swift */; };
+		1C9F4B522B65D98E0013245C /* Place+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B462B65D98E0013245C /* Place+Schema.swift */; };
+		1C9F4B532B65D98E0013245C /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B472B65D98E0013245C /* PlaceType.swift */; };
+		1C9F4B542B65D98E0013245C /* Location+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B482B65D98E0013245C /* Location+Schema.swift */; };
+		1C9F4B552B65D98E0013245C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B492B65D98E0013245C /* Weather.swift */; };
+		1C9F4B562B65D98E0013245C /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C9F4B4A2B65D98E0013245C /* amplifyconfiguration.json */; };
+		1C9F4B572B65D98E0013245C /* Message+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B4B2B65D98E0013245C /* Message+Schema.swift */; };
+		1C9F4B5B2B65DB220013245C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9F4B5A2B65DB220013245C /* MapView.swift */; };
+		1CC5A6872B681A0500F7419A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6862B681A0500F7419A /* DataService.swift */; };
+		1CC5A6892B681A5400F7419A /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6882B681A5400F7419A /* Queries.swift */; };
+		1CC5A68B2B681B1500F7419A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A68A2B681B1500F7419A /* LocationService.swift */; };
+		1CC5A68D2B68219A00F7419A /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A68C2B68219A00F7419A /* MapButton.swift */; };
+		1CC5A68F2B68222100F7419A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A68E2B68222100F7419A /* WeatherView.swift */; };
+		1CC5A6912B68224A00F7419A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6902B68224A00F7419A /* LoadingView.swift */; };
+		1CC5A6932B68227400F7419A /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6922B68227400F7419A /* FormButton.swift */; };
+		1CC5A6952B68242800F7419A /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6942B68242800F7419A /* PlacesView.swift */; };
+		1CC5A6972B68245F00F7419A /* PlaceType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6962B68245F00F7419A /* PlaceType+Extensions.swift */; };
+		1CC5A6992B68261700F7419A /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6982B68261700F7419A /* MessagesView.swift */; };
+		1CC5A69B2B6826C400F7419A /* VehicleMessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A69A2B6826C400F7419A /* VehicleMessageService.swift */; };
+		1CC5A69D2B6826D200F7419A /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A69C2B6826D200F7419A /* Subscriptions.swift */; };
+		1CC5A69F2B682A0900F7419A /* Message+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A69E2B682A0900F7419A /* Message+Extensions.swift */; };
+		1CC5A6A12B682FBA00F7419A /* CarPlayMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6A02B682FBA00F7419A /* CarPlayMapView.swift */; };
+		1CC5A6A52B68338900F7419A /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC5A6A42B68338900F7419A /* CarPlaySceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1749E96BB53447D9A2B3D892 /* VehicleMessage.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = VehicleMessage.swift; path = amplify/generated/models/VehicleMessage.swift; sourceTree = "<group>"; };
-		1C1E5CEC2626050400ED9C61 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		1C1E5CF02626053C00ED9C61 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
-		1C1E5CF32626098400ED9C61 /* CarPlayMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPlayMapView.swift; sourceTree = "<group>"; };
-		1C1E5CF6262609AD00ED9C61 /* FormButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
-		1C1E5CF7262609AD00ED9C61 /* MapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
-		1C1E5CF8262609AD00ED9C61 /* MessagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
-		1C1E5CF9262609AD00ED9C61 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		1C1E5CFA262609AD00ED9C61 /* PlacesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
-		1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		1C1E5D05262609F600ED9C61 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleMessageService.swift; sourceTree = "<group>"; };
-		1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
-		1C1E5D0E26260A5B00ED9C61 /* VehicleMessage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VehicleMessage+Extensions.swift"; sourceTree = "<group>"; };
-		1C26A4B42628D63600C9474F /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		1C26A4B72628D7EF00C9474F /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		1C655990264096F900BA16DB /* PlaceType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceType+Extensions.swift"; sourceTree = "<group>"; };
-		1C6AA5E82625F591009BB126 /* mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C6AA5EB2625F591009BB126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1C6AA5ED2625F591009BB126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C6AA5EF2625F591009BB126 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1C6AA5F12625F592009BB126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C6AA5F42625F592009BB126 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1C6AA5F72625F592009BB126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1C6AA5F92625F592009BB126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C101D39B099077397ECE27E /* Location.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Location.swift; path = amplify/generated/models/Location.swift; sourceTree = "<group>"; };
-		317B1916C8EC47D8947C1BBD /* Subscription+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Subscription+Schema.swift"; path = "amplify/generated/models/Subscription+Schema.swift"; sourceTree = "<group>"; };
-		387C50F61276751A58977372 /* Location+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Location+Schema.swift"; path = "amplify/generated/models/Location+Schema.swift"; sourceTree = "<group>"; };
-		3A60D2E626DE48CBACBA4063 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
-		4AB0AC8AD8BB4D5BBE40628D /* schema.graphql */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/swiftcarplaylocation/schema.graphql; sourceTree = "<group>"; };
-		58FE0A6DA0A64E288DDD7AA9 /* Subscription.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = amplify/generated/models/Subscription.swift; sourceTree = "<group>"; };
-		5E65AE07FAA645B5943F8D9A /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
-		5F05F297469847E2B55342EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
-		6A134D4FE1B544F1BCAD7E77 /* Weather+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Weather+Schema.swift"; path = "amplify/generated/models/Weather+Schema.swift"; sourceTree = "<group>"; };
-		9675B0B847B14E69B8A4A546 /* Place.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Place.swift; path = amplify/generated/models/Place.swift; sourceTree = "<group>"; };
-		AA1E90F2050E40D3BBE94074 /* Weather.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = amplify/generated/models/Weather.swift; sourceTree = "<group>"; };
-		C486BC6F23F74B379571BBD4 /* Query+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Query+Schema.swift"; path = "amplify/generated/models/Query+Schema.swift"; sourceTree = "<group>"; };
-		CC607458548E456C8742735D /* Place+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Place+Schema.swift"; path = "amplify/generated/models/Place+Schema.swift"; sourceTree = "<group>"; };
-		DD72265D7893437FB68BC964 /* PlaceType.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = PlaceType.swift; path = amplify/generated/models/PlaceType.swift; sourceTree = "<group>"; };
-		DF62F4AEFD0D44458C9A3C0A /* VehicleMessage+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "VehicleMessage+Schema.swift"; path = "amplify/generated/models/VehicleMessage+Schema.swift"; sourceTree = "<group>"; };
-		F006CED48BAC4777AABCCFBC /* Query.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Query.swift; path = amplify/generated/models/Query.swift; sourceTree = "<group>"; };
+		1C9F4B232B65D8D20013245C /* mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9F4B262B65D8D20013245C /* mobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobileApp.swift; sourceTree = "<group>"; };
+		1C9F4B282B65D8D20013245C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1C9F4B2A2B65D8D30013245C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C9F4B2D2B65D8D30013245C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C9F4B402B65D98E0013245C /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1C9F4B412B65D98E0013245C /* Weather+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Weather+Schema.swift"; sourceTree = "<group>"; };
+		1C9F4B422B65D98E0013245C /* schema.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
+		1C9F4B432B65D98E0013245C /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
+		1C9F4B442B65D98E0013245C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		1C9F4B452B65D98E0013245C /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		1C9F4B462B65D98E0013245C /* Place+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Place+Schema.swift"; sourceTree = "<group>"; };
+		1C9F4B472B65D98E0013245C /* PlaceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceType.swift; sourceTree = "<group>"; };
+		1C9F4B482B65D98E0013245C /* Location+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+Schema.swift"; sourceTree = "<group>"; };
+		1C9F4B492B65D98E0013245C /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1C9F4B4A2B65D98E0013245C /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		1C9F4B4B2B65D98E0013245C /* Message+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+Schema.swift"; sourceTree = "<group>"; };
+		1C9F4B5A2B65DB220013245C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1CC5A6862B681A0500F7419A /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		1CC5A6882B681A5400F7419A /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
+		1CC5A68A2B681B1500F7419A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1CC5A68C2B68219A00F7419A /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
+		1CC5A68E2B68222100F7419A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		1CC5A6902B68224A00F7419A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1CC5A6922B68227400F7419A /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
+		1CC5A6942B68242800F7419A /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
+		1CC5A6962B68245F00F7419A /* PlaceType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceType+Extensions.swift"; sourceTree = "<group>"; };
+		1CC5A6982B68261700F7419A /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		1CC5A69A2B6826C400F7419A /* VehicleMessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMessageService.swift; sourceTree = "<group>"; };
+		1CC5A69C2B6826D200F7419A /* Subscriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriptions.swift; sourceTree = "<group>"; };
+		1CC5A69E2B682A0900F7419A /* Message+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+Extensions.swift"; sourceTree = "<group>"; };
+		1CC5A6A02B682FBA00F7419A /* CarPlayMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayMapView.swift; sourceTree = "<group>"; };
+		1CC5A6A42B68338900F7419A /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
+		1CC5A6A62B68340900F7419A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1CC5A6AB2B6841BE00F7419A /* mobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mobile.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C6AA5E52625F591009BB126 /* Frameworks */ = {
+		1C9F4B202B65D8D20013245C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7B41AD2970A493001CD722 /* Amplify in Frameworks */,
-				1C7B41AB2970A493001CD722 /* AWSPluginsCore in Frameworks */,
-				1C7B41A92970A493001CD722 /* AWSAPIPlugin in Frameworks */,
+				1C9F4B362B65D9550013245C /* AWSAPIPlugin in Frameworks */,
+				1C9F4B3E2B65D9550013245C /* AWSLocationGeoPlugin in Frameworks */,
+				1C9F4B382B65D9550013245C /* AWSCloudWatchLoggingPlugin in Frameworks */,
+				1C9F4B3A2B65D9550013245C /* AWSCognitoAuthPlugin in Frameworks */,
+				1C9F4B3C2B65D9550013245C /* AWSDataStorePlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C10A34E2631DF8500FB937D /* Frameworks */ = {
+		1C9F4B1A2B65D8D10013245C = {
 			isa = PBXGroup;
 			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1C1E5CEB262604ED00ED9C61 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				1C1E5D0B26260A1C00ED9C61 /* Subscriptions.swift */,
-				1C1E5D08262609FF00ED9C61 /* VehicleMessageService.swift */,
-				1C1E5D05262609F600ED9C61 /* LocationService.swift */,
-				1C1E5CEC2626050400ED9C61 /* DataService.swift */,
-				1C1E5CF02626053C00ED9C61 /* Queries.swift */,
-				1C1E5D0E26260A5B00ED9C61 /* VehicleMessage+Extensions.swift */,
-				1C655990264096F900BA16DB /* PlaceType+Extensions.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		1C6AA5DF2625F591009BB126 = {
-			isa = PBXGroup;
-			children = (
-				646CD685A9994B72A1BFF773 /* AmplifyModels */,
-				9C60161FFB7F44F6B439FA4B /* AmplifyConfig */,
-				1C6AA5EA2625F591009BB126 /* mobile */,
-				1C6AA5E92625F591009BB126 /* Products */,
-				1C10A34E2631DF8500FB937D /* Frameworks */,
+				1C9F4B252B65D8D20013245C /* mobile */,
+				1C9F4B242B65D8D20013245C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1C6AA5E92625F591009BB126 /* Products */ = {
+		1C9F4B242B65D8D20013245C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C6AA5E82625F591009BB126 /* mobile.app */,
+				1C9F4B232B65D8D20013245C /* mobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1C6AA5EA2625F591009BB126 /* mobile */ = {
+		1C9F4B252B65D8D20013245C /* mobile */ = {
 			isa = PBXGroup;
 			children = (
-				1C1E5CEB262604ED00ED9C61 /* Services */,
-				1C6AA6022625FBCA009BB126 /* Views */,
-				1C6AA6002625FB74009BB126 /* AppLifecycle */,
-				1C6AA5F12625F592009BB126 /* Assets.xcassets */,
-				1C6AA5F62625F592009BB126 /* LaunchScreen.storyboard */,
-				1C6AA5F92625F592009BB126 /* Info.plist */,
-				1C6AA5F32625F592009BB126 /* Preview Content */,
-				1C26A4B42628D63600C9474F /* Entitlements.plist */,
+				1CC5A6AB2B6841BE00F7419A /* mobile.entitlements */,
+				1CC5A6A62B68340900F7419A /* Info.plist */,
+				1C9F4B592B65DAE20013245C /* Services */,
+				1C9F4B582B65D9ED0013245C /* Views */,
+				1C9F4B3F2B65D98E0013245C /* amplify */,
+				1C9F4B262B65D8D20013245C /* mobileApp.swift */,
+				1CC5A6A42B68338900F7419A /* CarPlaySceneDelegate.swift */,
+				1C9F4B2A2B65D8D30013245C /* Assets.xcassets */,
+				1C9F4B2C2B65D8D30013245C /* Preview Content */,
 			);
 			path = mobile;
 			sourceTree = "<group>";
 		};
-		1C6AA5F32625F592009BB126 /* Preview Content */ = {
+		1C9F4B2C2B65D8D30013245C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				1C6AA5F42625F592009BB126 /* Preview Assets.xcassets */,
+				1C9F4B2D2B65D8D30013245C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1C6AA6002625FB74009BB126 /* AppLifecycle */ = {
+		1C9F4B3F2B65D98E0013245C /* amplify */ = {
 			isa = PBXGroup;
 			children = (
-				1C6AA5EB2625F591009BB126 /* AppDelegate.swift */,
-				1C6AA5ED2625F591009BB126 /* SceneDelegate.swift */,
-				1C26A4B72628D7EF00C9474F /* CarPlaySceneDelegate.swift */,
+				1C9F4B402B65D98E0013245C /* Location.swift */,
+				1C9F4B412B65D98E0013245C /* Weather+Schema.swift */,
+				1C9F4B422B65D98E0013245C /* schema.graphql */,
+				1C9F4B432B65D98E0013245C /* AmplifyModels.swift */,
+				1C9F4B442B65D98E0013245C /* Message.swift */,
+				1C9F4B452B65D98E0013245C /* Place.swift */,
+				1C9F4B462B65D98E0013245C /* Place+Schema.swift */,
+				1C9F4B472B65D98E0013245C /* PlaceType.swift */,
+				1C9F4B482B65D98E0013245C /* Location+Schema.swift */,
+				1C9F4B492B65D98E0013245C /* Weather.swift */,
+				1C9F4B4A2B65D98E0013245C /* amplifyconfiguration.json */,
+				1C9F4B4B2B65D98E0013245C /* Message+Schema.swift */,
 			);
-			path = AppLifecycle;
-			sourceTree = "<group>";
+			path = amplify;
+			sourceTree = SOURCE_ROOT;
 		};
-		1C6AA6022625FBCA009BB126 /* Views */ = {
+		1C9F4B582B65D9ED0013245C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1C1E5CF6262609AD00ED9C61 /* FormButton.swift */,
-				1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */,
-				1C1E5CF7262609AD00ED9C61 /* MapButton.swift */,
-				1C1E5CF9262609AD00ED9C61 /* MapView.swift */,
-				1C1E5CF8262609AD00ED9C61 /* MessagesView.swift */,
-				1C1E5CFA262609AD00ED9C61 /* PlacesView.swift */,
-				1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */,
-				1C1E5CF32626098400ED9C61 /* CarPlayMapView.swift */,
-				1C6AA5EF2625F591009BB126 /* ContentView.swift */,
+				1C9F4B282B65D8D20013245C /* ContentView.swift */,
+				1CC5A68C2B68219A00F7419A /* MapButton.swift */,
+				1CC5A6942B68242800F7419A /* PlacesView.swift */,
+				1C9F4B5A2B65DB220013245C /* MapView.swift */,
+				1CC5A6902B68224A00F7419A /* LoadingView.swift */,
+				1CC5A6982B68261700F7419A /* MessagesView.swift */,
+				1CC5A6A02B682FBA00F7419A /* CarPlayMapView.swift */,
+				1CC5A6922B68227400F7419A /* FormButton.swift */,
+				1CC5A68E2B68222100F7419A /* WeatherView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		646CD685A9994B72A1BFF773 /* AmplifyModels */ = {
+		1C9F4B592B65DAE20013245C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5E65AE07FAA645B5943F8D9A /* AmplifyModels.swift */,
-				9675B0B847B14E69B8A4A546 /* Place.swift */,
-				CC607458548E456C8742735D /* Place+Schema.swift */,
-				DD72265D7893437FB68BC964 /* PlaceType.swift */,
-				F006CED48BAC4777AABCCFBC /* Query.swift */,
-				C486BC6F23F74B379571BBD4 /* Query+Schema.swift */,
-				58FE0A6DA0A64E288DDD7AA9 /* Subscription.swift */,
-				317B1916C8EC47D8947C1BBD /* Subscription+Schema.swift */,
-				1749E96BB53447D9A2B3D892 /* VehicleMessage.swift */,
-				DF62F4AEFD0D44458C9A3C0A /* VehicleMessage+Schema.swift */,
-				AA1E90F2050E40D3BBE94074 /* Weather.swift */,
-				6A134D4FE1B544F1BCAD7E77 /* Weather+Schema.swift */,
-				387C50F61276751A58977372 /* Location+Schema.swift */,
-				2C101D39B099077397ECE27E /* Location.swift */,
+				1CC5A6862B681A0500F7419A /* DataService.swift */,
+				1CC5A6962B68245F00F7419A /* PlaceType+Extensions.swift */,
+				1CC5A68A2B681B1500F7419A /* LocationService.swift */,
+				1CC5A69A2B6826C400F7419A /* VehicleMessageService.swift */,
+				1CC5A69C2B6826D200F7419A /* Subscriptions.swift */,
+				1CC5A6882B681A5400F7419A /* Queries.swift */,
+				1CC5A69E2B682A0900F7419A /* Message+Extensions.swift */,
 			);
-			name = AmplifyModels;
-			path = .;
-			sourceTree = "<group>";
-		};
-		9C60161FFB7F44F6B439FA4B /* AmplifyConfig */ = {
-			isa = PBXGroup;
-			children = (
-				3A60D2E626DE48CBACBA4063 /* amplifyconfiguration.json */,
-				5F05F297469847E2B55342EA /* awsconfiguration.json */,
-				4AB0AC8AD8BB4D5BBE40628D /* schema.graphql */,
-			);
-			name = AmplifyConfig;
-			path = .;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C6AA5E72625F591009BB126 /* mobile */ = {
+		1C9F4B222B65D8D20013245C /* mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C6AA5FC2625F592009BB126 /* Build configuration list for PBXNativeTarget "mobile" */;
+			buildConfigurationList = 1C9F4B312B65D8D30013245C /* Build configuration list for PBXNativeTarget "mobile" */;
 			buildPhases = (
-				1C6AA5E42625F591009BB126 /* Sources */,
-				1C6AA5E52625F591009BB126 /* Frameworks */,
-				1C6AA5E62625F591009BB126 /* Resources */,
+				1C9F4B1F2B65D8D20013245C /* Sources */,
+				1C9F4B202B65D8D20013245C /* Frameworks */,
+				1C9F4B212B65D8D20013245C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -248,128 +206,113 @@
 			);
 			name = mobile;
 			packageProductDependencies = (
-				1C7B41A82970A493001CD722 /* AWSAPIPlugin */,
-				1C7B41AA2970A493001CD722 /* AWSPluginsCore */,
-				1C7B41AC2970A493001CD722 /* Amplify */,
+				1C9F4B352B65D9550013245C /* AWSAPIPlugin */,
+				1C9F4B372B65D9550013245C /* AWSCloudWatchLoggingPlugin */,
+				1C9F4B392B65D9550013245C /* AWSCognitoAuthPlugin */,
+				1C9F4B3B2B65D9550013245C /* AWSDataStorePlugin */,
+				1C9F4B3D2B65D9550013245C /* AWSLocationGeoPlugin */,
 			);
 			productName = mobile;
-			productReference = 1C6AA5E82625F591009BB126 /* mobile.app */;
+			productReference = 1C9F4B232B65D8D20013245C /* mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1C6AA5E02625F591009BB126 /* Project object */ = {
+		1C9F4B1B2B65D8D10013245C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1240;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					1C6AA5E72625F591009BB126 = {
-						CreatedOnToolsVersion = 12.4;
+					1C9F4B222B65D8D20013245C = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = 1C6AA5E32625F591009BB126 /* Build configuration list for PBXProject "mobile" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 1C9F4B1E2B65D8D10013245C /* Build configuration list for PBXProject "mobile" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1C6AA5DF2625F591009BB126;
+			mainGroup = 1C9F4B1A2B65D8D10013245C;
 			packageReferences = (
-				1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */,
+				1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */,
 			);
-			productRefGroup = 1C6AA5E92625F591009BB126 /* Products */;
+			productRefGroup = 1C9F4B242B65D8D20013245C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1C6AA5E72625F591009BB126 /* mobile */,
+				1C9F4B222B65D8D20013245C /* mobile */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C6AA5E62625F591009BB126 /* Resources */ = {
+		1C9F4B212B65D8D20013245C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6AA5F82625F592009BB126 /* LaunchScreen.storyboard in Resources */,
-				1C6AA5F52625F592009BB126 /* Preview Assets.xcassets in Resources */,
-				1C6AA5F22625F592009BB126 /* Assets.xcassets in Resources */,
-				7FE1EE1B5960420BACFD3F5D /* amplifyconfiguration.json in Resources */,
-				221A047359D14493A2D67F06 /* awsconfiguration.json in Resources */,
+				1C9F4B2E2B65D8D30013245C /* Preview Assets.xcassets in Resources */,
+				1C9F4B4E2B65D98E0013245C /* schema.graphql in Resources */,
+				1C9F4B2B2B65D8D30013245C /* Assets.xcassets in Resources */,
+				1C9F4B562B65D98E0013245C /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C6AA5E42625F591009BB126 /* Sources */ = {
+		1C9F4B1F2B65D8D20013245C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6AA5EC2625F591009BB126 /* AppDelegate.swift in Sources */,
-				1C655991264096F900BA16DB /* PlaceType+Extensions.swift in Sources */,
-				1C6AA5EE2625F591009BB126 /* SceneDelegate.swift in Sources */,
-				1C6AA5F02625F591009BB126 /* ContentView.swift in Sources */,
-				1C1E5D00262609AD00ED9C61 /* MapView.swift in Sources */,
-				1C26A4B82628D7EF00C9474F /* CarPlaySceneDelegate.swift in Sources */,
-				65F64C2CF9384D7484D427A7 /* AmplifyModels.swift in Sources */,
-				1C1E5D02262609AD00ED9C61 /* LoadingView.swift in Sources */,
-				1C1E5CFE262609AD00ED9C61 /* MapButton.swift in Sources */,
-				0930B51514FB4D3DBA1A9283 /* Place.swift in Sources */,
-				1A936FB2E39B4A1B84E0D38B /* Place+Schema.swift in Sources */,
-				1C1E5CF12626053C00ED9C61 /* Queries.swift in Sources */,
-				1C1E5D03262609AD00ED9C61 /* WeatherView.swift in Sources */,
-				67E0EF68315E474596F090A4 /* PlaceType.swift in Sources */,
-				1C1E5D01262609AD00ED9C61 /* PlacesView.swift in Sources */,
-				1C1E5CED2626050400ED9C61 /* DataService.swift in Sources */,
-				1C1E5D0C26260A1C00ED9C61 /* Subscriptions.swift in Sources */,
-				888137310A034F4B938A3501 /* Query.swift in Sources */,
-				1C1E5D09262609FF00ED9C61 /* VehicleMessageService.swift in Sources */,
-				1C1E5CFF262609AD00ED9C61 /* MessagesView.swift in Sources */,
-				1C1E5CFD262609AD00ED9C61 /* FormButton.swift in Sources */,
-				1C1E5CF42626098400ED9C61 /* CarPlayMapView.swift in Sources */,
-				BE201746CF984BB5BC3812F1 /* Query+Schema.swift in Sources */,
-				CB6A389B3A0F4BD2AEBC7177 /* Subscription.swift in Sources */,
-				583DE4E58BA8433398FE08A3 /* Subscription+Schema.swift in Sources */,
-				52367A61AB7940F3AC0D36CF /* VehicleMessage.swift in Sources */,
-				1C1E5D06262609F600ED9C61 /* LocationService.swift in Sources */,
-				1C1E5D0F26260A5B00ED9C61 /* VehicleMessage+Extensions.swift in Sources */,
-				F5D502F56ADC4BBCB079DA19 /* VehicleMessage+Schema.swift in Sources */,
-				5121E161A261428F97A16F0C /* Weather.swift in Sources */,
-				A4A13911029A432E9ECABD40 /* Weather+Schema.swift in Sources */,
-				78C8C72F1E8D6391D9857EF3 /* Location+Schema.swift in Sources */,
-				053679B3FDA3F83CFA9C7538 /* Location.swift in Sources */,
+				1C9F4B4F2B65D98E0013245C /* AmplifyModels.swift in Sources */,
+				1CC5A6972B68245F00F7419A /* PlaceType+Extensions.swift in Sources */,
+				1CC5A68D2B68219A00F7419A /* MapButton.swift in Sources */,
+				1CC5A6872B681A0500F7419A /* DataService.swift in Sources */,
+				1CC5A6952B68242800F7419A /* PlacesView.swift in Sources */,
+				1C9F4B292B65D8D20013245C /* ContentView.swift in Sources */,
+				1CC5A6A52B68338900F7419A /* CarPlaySceneDelegate.swift in Sources */,
+				1CC5A69D2B6826D200F7419A /* Subscriptions.swift in Sources */,
+				1C9F4B4C2B65D98E0013245C /* Location.swift in Sources */,
+				1C9F4B552B65D98E0013245C /* Weather.swift in Sources */,
+				1CC5A69F2B682A0900F7419A /* Message+Extensions.swift in Sources */,
+				1CC5A6A12B682FBA00F7419A /* CarPlayMapView.swift in Sources */,
+				1CC5A6892B681A5400F7419A /* Queries.swift in Sources */,
+				1C9F4B5B2B65DB220013245C /* MapView.swift in Sources */,
+				1C9F4B502B65D98E0013245C /* Message.swift in Sources */,
+				1C9F4B532B65D98E0013245C /* PlaceType.swift in Sources */,
+				1CC5A69B2B6826C400F7419A /* VehicleMessageService.swift in Sources */,
+				1C9F4B542B65D98E0013245C /* Location+Schema.swift in Sources */,
+				1CC5A68B2B681B1500F7419A /* LocationService.swift in Sources */,
+				1C9F4B272B65D8D20013245C /* mobileApp.swift in Sources */,
+				1C9F4B572B65D98E0013245C /* Message+Schema.swift in Sources */,
+				1C9F4B512B65D98E0013245C /* Place.swift in Sources */,
+				1CC5A6932B68227400F7419A /* FormButton.swift in Sources */,
+				1CC5A68F2B68222100F7419A /* WeatherView.swift in Sources */,
+				1C9F4B522B65D98E0013245C /* Place+Schema.swift in Sources */,
+				1CC5A6992B68261700F7419A /* MessagesView.swift in Sources */,
+				1CC5A6912B68224A00F7419A /* LoadingView.swift in Sources */,
+				1C9F4B4D2B65D98E0013245C /* Weather+Schema.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		1C6AA5F62625F592009BB126 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C6AA5F72625F592009BB126 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		1C6AA5FA2625F592009BB126 /* Debug */ = {
+		1C9F4B2F2B65D8D30013245C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -400,7 +343,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -414,24 +357,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		1C6AA5FB2625F592009BB126 /* Release */ = {
+		1C9F4B302B65D8D30013245C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -462,7 +406,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -470,53 +414,77 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		1C6AA5FD2625F592009BB126 /* Debug */ = {
+		1C9F4B322B65D8D30013245C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = mobile/Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = mobile/mobile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mobile/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mobile/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow the app to use the user's location?";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = amazon.com.mobile;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.samples.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1C6AA5FE2625F592009BB126 /* Release */ = {
+		1C9F4B332B65D8D30013245C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = mobile/Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = mobile/mobile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"mobile/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mobile/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow the app to use the user's location?";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = amazon.com.mobile;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aws.samples.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -525,20 +493,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C6AA5E32625F591009BB126 /* Build configuration list for PBXProject "mobile" */ = {
+		1C9F4B1E2B65D8D10013245C /* Build configuration list for PBXProject "mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C6AA5FA2625F592009BB126 /* Debug */,
-				1C6AA5FB2625F592009BB126 /* Release */,
+				1C9F4B2F2B65D8D30013245C /* Debug */,
+				1C9F4B302B65D8D30013245C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1C6AA5FC2625F592009BB126 /* Build configuration list for PBXNativeTarget "mobile" */ = {
+		1C9F4B312B65D8D30013245C /* Build configuration list for PBXNativeTarget "mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C6AA5FD2625F592009BB126 /* Debug */,
-				1C6AA5FE2625F592009BB126 /* Release */,
+				1C9F4B322B65D8D30013245C /* Debug */,
+				1C9F4B332B65D8D30013245C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -546,33 +514,43 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
+		1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aws-amplify/amplify-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.1;
+				minimumVersion = 2.25.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C7B41A82970A493001CD722 /* AWSAPIPlugin */ = {
+		1C9F4B352B65D9550013245C /* AWSAPIPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			package = 1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = AWSAPIPlugin;
 		};
-		1C7B41AA2970A493001CD722 /* AWSPluginsCore */ = {
+		1C9F4B372B65D9550013245C /* AWSCloudWatchLoggingPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
-			productName = AWSPluginsCore;
+			package = 1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCloudWatchLoggingPlugin;
 		};
-		1C7B41AC2970A493001CD722 /* Amplify */ = {
+		1C9F4B392B65D9550013245C /* AWSCognitoAuthPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1C7B41A72970A493001CD722 /* XCRemoteSwiftPackageReference "amplify-swift" */;
-			productName = Amplify;
+			package = 1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		1C9F4B3B2B65D9550013245C /* AWSDataStorePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSDataStorePlugin;
+		};
+		1C9F4B3D2B65D9550013245C /* AWSLocationGeoPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C9F4B342B65D9550013245C /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSLocationGeoPlugin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1C6AA5E02625F591009BB126 /* Project object */;
+	rootObject = 1C9F4B1B2B65D8D10013245C /* Project object */;
 }

@@ -4,15 +4,15 @@ import MapKit
 // the main iOS view that displays the Map, the user's current location and action buttons
 struct MapView: View {
     
-    // subscribe to vehicle messages from the Cloud
-    @ObservedObject var vehicleMessageService = VehicleMessageService()
-    
+    // set the initial map region to user location
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
+
     // subscribe to the user's current location
     @ObservedObject var locationService = LocationService()
-    
-    // set the initial map region
-    @State private var region = MKCoordinateRegion()
-    
+
+    // subscribe to vehicle messages from the Cloud
+    @ObservedObject var vehicleMessageService = VehicleMessageService()
+
     // state variables to control the visibility of modal sheets
     @State private var showWeatherView = false
     @State private var showPOIView = false
@@ -20,11 +20,8 @@ struct MapView: View {
     
     var body: some View {
         ZStack {
-            Map (
-                coordinateRegion: $region,
-                showsUserLocation: true,
-                userTrackingMode: .constant(.follow)
-            ).edgesIgnoringSafeArea(.all)
+            Map(position: $position){
+            }
             VStack {
                 Spacer()
                 Text(locationService.city)
@@ -49,23 +46,17 @@ struct MapView: View {
                             )
                         }
                     MapButton(image: "text.bubble", action: {showMessagesView.toggle()})
-                    .sheet(isPresented: $showMessagesView) {
-                        MessagesView(
-                            showView: $showMessagesView,
-                            messages: $vehicleMessageService.messages
-                        )
-                    }
+                        .sheet(isPresented: $showMessagesView) {
+                            MessagesView(
+                                showView: $showMessagesView,
+                                messages: $vehicleMessageService.messages
+                            )
+                        }
+                }
+                .onDisappear {
+                    vehicleMessageService.cancelSubscription()
                 }
             }
         }
-        .onDisappear {
-            vehicleMessageService.cancelSubscription()
-        }
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
     }
 }

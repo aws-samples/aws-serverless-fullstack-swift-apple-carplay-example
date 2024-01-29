@@ -1,0 +1,53 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type Location {
+  latitude: Float!
+  longitude: Float!
+  name: String!
+}
+
+type Message {
+  id: ID!
+  text: String!
+  recipient: String!
+  timestamp: AWSDateTime!
+}
+
+type Weather {
+  aqIndex: Float!
+  latitude: Float!
+  longitude: Float!
+  temperature: Float!
+}
+
+enum PlaceType {
+  coffee
+  food
+  fuel
+}
+
+type Place {
+  address: String!
+  latitude: Float!
+  longitude: Float!
+  name: String!
+  placeType: PlaceType!
+}
+
+type Mutation {
+  createMessage(recipient: String!, text: String!): Message
+}
+
+type Query {
+  getCity(latitude: Float!, longitude: Float!): Location
+  getPlaces(latitude: Float!, longitude: Float!, maxResults: Int!, placeType: PlaceType!): [Place]
+  getWeather(latitude: Float!, longitude: Float!): Weather
+}
+
+type Subscription {
+  onCreateMessage(recipient: String!): Message @aws_subscribe(mutations : ["createMessage"])
+}

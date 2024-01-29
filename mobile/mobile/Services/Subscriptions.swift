@@ -3,23 +3,23 @@ import Amplify
 // Appsync GraphQL subscription request for vehicle messages
 extension GraphQLRequest {
     
-    static func onCreateVehicleMessage(owner: String) -> GraphQLRequest<VehicleMessage> {
-        let operationName = "onCreateVehicleMessage"
+    static func onCreateMessage(recipient: String) -> GraphQLRequest<Message> {
+        let operationName = "onCreateMessage"
         let document = """
-        subscription \(operationName)($owner: String!) {
-          \(operationName)(owner: $owner) {
+        subscription \(operationName) {
+          \(operationName)(recipient: "\(recipient)") {
             id
-            message
-            owner
+            text
+            recipient
             timestamp
           }
         }
         """
         
-        return GraphQLRequest<VehicleMessage>(
+        return GraphQLRequest<Message>(
             document: document,
-            variables: ["owner": owner],
-            responseType: VehicleMessage.self,
+            responseType: Message.self,
             decodePath: operationName)
     }
 }
+

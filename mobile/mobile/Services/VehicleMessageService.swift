@@ -12,10 +12,10 @@ class VehicleMessageService: NSObject, ObservableObject {
     
     // in a production app this will come from the authenticated username or vehicle registration
     // for this sample we will hard code the vehicle identifier
-    let owner = "Vehicle1"
+    let recipient = "Vehicle1"
     
     weak var delegate:VehicleMessageServiceDelegate?
-    var subscription: AmplifyAsyncThrowingSequence<GraphQLSubscriptionEvent<VehicleMessage>> = AmplifyAsyncThrowingSequence<GraphQLSubscriptionEvent<VehicleMessage>>()
+    var subscription: AmplifyAsyncThrowingSequence<GraphQLSubscriptionEvent<Message>> = AmplifyAsyncThrowingSequence<GraphQLSubscriptionEvent<Message>>()
     
     override init() {
         super.init()
@@ -24,10 +24,10 @@ class VehicleMessageService: NSObject, ObservableObject {
     
     // ObservedObject for iOS views to subscribe to for new messages as they are received from the Cloud
     // messages is an array of all messages received from the subscription
-    @Published var messages: [VehicleMessage] = [VehicleMessage]()
+    @Published var messages: [Message] = [Message]()
     
     func startSubscription() {
-        subscription = Amplify.API.subscribe(request: .onCreateVehicleMessage(owner: owner))
+        subscription = Amplify.API.subscribe(request: .onCreateMessage(recipient: recipient))
         Task {
             do {
                 for try await subscriptionEvent in subscription {
@@ -38,7 +38,7 @@ class VehicleMessageService: NSObject, ObservableObject {
                         print("Successfully received message from subscription")
                         DispatchQueue.main.async {
                             self.messages.append(createdItem)
-                            self.delegate?.vehicleMessageService(message: createdItem.message)
+                            self.delegate?.vehicleMessageService(message: createdItem.text)
                         }
                     case .data(.failure(let error)):
                         print("Failed subscription result with \(error.errorDescription)")
@@ -55,3 +55,4 @@ class VehicleMessageService: NSObject, ObservableObject {
         subscription.cancel();
     }
 }
+
