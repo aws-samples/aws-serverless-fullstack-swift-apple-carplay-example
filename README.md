@@ -40,7 +40,7 @@ The following software was used in the development of this application. While it
 
 6. [Docker Desktop](https://www.docker.com/products/docker-desktop) (^4.36) Docker is used to compile the Swift Lambda functions into a Docker image.
 
-7. [Xcode](https://developer.apple.com/xcode/) (^15.2) Xcode is used to build and debug the CarPlay application. You will need iOS Simulator 17.0 enabled.
+7. [Xcode](https://developer.apple.com/xcode/) (^16.2) Xcode is used to build and debug the CarPlay application. You will need iOS Simulator ^18.0 enabled.
 
 ### **Installation**
 
